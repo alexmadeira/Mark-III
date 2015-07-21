@@ -1,0 +1,39 @@
+
+.container-fluid,.container{height:100%;}
+
+/*--------*/
+canvas{position: absolute;}
+#stats{display: none;}
+
+
+body{background: #000;overflow: hidden}
+.logo{ background: #f00}
+
+.code{font-family: 'courier_newregular';  opacity: .45;color: #fff;}
+ul.scene{ min-height: 100%; min-width: 100%}
+li.logo-alex-1 { left: 80% !important;top: 75%!important; position: absolute!important; z-index: 5}
+li.logo-alex-1 a {background: url(../img/alex-madeira-logo_01.png)no-repeat;height: 53px;width: 286px;display: block;text-indent: -9999em;}
+li.logo-alex-2 {left: 80% !important;top: 82.6%!important;position: absolute!important; z-index: 6}
+li.logo-alex-2 a {background: url(../img/alex-madeira-logo_02.png)no-repeat;height: 53px;width: 286px;display: block;text-indent: -9999em;}
+li.logo-madeira{left: 80% !important;top: 90%!important;position: absolute!important; z-index: 7}
+li.logo-madeira a {background: url(../img/alex-madeira-logo_03.png)no-repeat;height: 53px;width: 286px;display: block;text-indent: -9999em;}
+li.cargo {z-index: 10; left: 19%!important;}
+li.cargo h1{font-size: 29px;} 
+li.albert{background: url(../img/alex-madeira-albert-einstein.png) top no-repeat; text-indent: -9999em;height:100%;width: 40%;background-size: 100%;left: 50%!important;margin-left: -20%;top: 10%!important;z-index: 1;}	
+
+li.construcao{z-index: 10; top:90%!important}
+
+
+/*------- CODES ---------*/
+.mesageCode{font-size: 24px;opacity: .20;}
+
+.mesageCode.error{top: 50%!important;left: 10%!important;text-transform: uppercase;}
+.mesageCode.postName{top: 65%!important;left: 15%!important;}
+.mesageCode.userAgente{top: 46%!important;left: 63%!important;width: 480px; text-transform: uppercase;font-size: 21px;}
+.mesageCode.httpReferer{top: 30%!important;left: 7%!important;text-transform: uppercase;font-size: 28px;}
+
+  
+  
+  
+  
+  
