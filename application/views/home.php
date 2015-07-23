@@ -49,15 +49,18 @@
 	    <![endif]-->
 		
 		<style type="text/css">
-			html,body{height: 100%; line-height: 1;font-family: 'Open Sans', Arial, sans-serif;}
-			.main{height: 100%;}
+			html,body{height: 100%; line-height: 1;font-family: 'Open Sans', Arial, sans-serif; background: #000}
+			.main{height: 100%; padding: 0}
+			.nav>li>a:hover, .nav>li>a:focus{background-color:transparent;}
+			.main .row {margin-left: 0;margin-right: 0;}
 			.header{text-align: center;background: url('<?=base_url('public/img/alex-madeira-bg-header.jpg')?>');background-repeat: no-repeat;background-attachment: fixed;background-size: cover;background-position: center center;height: 100%; color:#707070;}
 			.header strong{color: #fff}
-			.header .container{  position: fixed;width: 100%;top: 50%;margin-top: -225px;z-index: 0; height: 100%;}
-			.header .container .logo{background: url('<?=base_url('public/img/alex-madeira-logo.png')?>');background-repeat: no-repeat;text-indent: -9999em;display: inline-block;width: 289px;height: 140px; }
-    		.header .container p{font-size: 20px;font-weight: 400;line-height: 1.5em; text-transform: uppercase;   width: 880px; margin: 40px auto;}
+			.header .container{position: fixed;width: 100%;top: 50%;margin-top: -225px;z-index: 0; height: 100%;}
+			.header .container .logo{background: url('<?=base_url('public/img/alex-madeira-logo.png')?>');background-repeat: no-repeat;text-indent: -9999em;display: inline-block;width: 289px;height: 140px;}
+    		.header .container p{font-size: 20px;font-weight: 400;line-height: 1.5em; text-transform: uppercase;   max-width: 880px; margin: 40px auto;}
 			.header .container p strong{font-weight: normal;}
 			
+
 			ul.nav{text-align: center;  display: inline-block;margin: 0 45px;}
 			ul.nav li{display: inline-block;margin: 0 45px;}
 				ul.nav li a{background: url('<?=base_url('public/img/alex-madeira-nav-icon.png')?>') left top no-repeat;background-size: 165px; text-indent: -9999em;  display: block; height: 55px;width: 55px;}
@@ -69,22 +72,141 @@
 				ul.nav li a.project:hover{background-position: 0 -55px;background-color: transparent;}
 				ul.nav li a.contact:hover{background-position: -55px -55px;background-color: transparent;}
 			.contentPage{background: #fff;position: relative;z-index: 100;height: auto; text-align: center;}
-			.contentPage h2{color: #333333;font-size: 28px;font-weight: 700;width: 90%;max-width: 870px; margin: 0 auto;padding-top: 30px;margin-bottom: 60px;line-height: 50px;}
-			.viewMore{text-decoration: none;color: #333333;text-transform: uppercase;font-size: 14px;font-weight: 700;padding: 18px 32px;border: 2px solid #333333;-webkit-transition: all 0.2s ease-out;-moz-transition: all 0.2s ease-out;-o-transition: all 0.2s ease-out;-ms-transition: all 0.2s ease-out;display: inline-block; margin-bottom: 30px}
-			.viewMore:hover{color: #fff;background: #333333;}
+			.italic{font-style: italic;}
 
-			.contentPage .projects .project{  padding: 5px;position: relative;overflow: hidden;border: 3px solid #fff;text-align: left;height: 400px;}
+			.contentPage h2{color: #333333;font-size: 28px;font-weight:l700;width: 90%;max-width: 870px; margin: 0 auto;padding-top: 30px;margin-bottom: 60px;line-height: 50px;}
+			.viewMore{text-decoration: none;color: #333333;text-transform: uppercase;font-size: 14px;font-weight: 700;padding: 18px 32px;border: 2px solid #333333;-webkit-transition: all 0.2s ease-out;-moz-transition: all 0.2s ease-out;-o-transition: all 0.2s ease-out;-ms-transition: all 0.2s ease-out;display: inline-block; margin-bottom: 30px; position: relative}
+			.viewMore:hover{color: #fff;background: #333333;}
+			.viewMore i{margin-left: 10px;}
+			.contentPage .projects {margin-left: 3px;margin-right: 3px;}
+
+			.contentPage .projects .project{padding: 5px;position: relative;overflow: hidden;border: 3px solid #fff;text-align: left;height: 400px;}
 			.contentPage .projects .project img{width: 100%;position: absolute;left: 0;top: 0;  transform: scale(1);-webkit-transform: scale(1);-moz-transform: scale(1);-o-transform: scale(1);-ms-transform: scale(1);-webkit-transition: all .3s ease-out;-moz-transition: all .3s ease-out;-o-transition: all .3s ease-out;-ms-transition: all .3s ease-out;}
-			.contentPage .projects .project h3{position: relative;left: 25px;color: #fff;font-size: 28px;font-weight: 700;z-index: 5;}
+			.contentPage .projects .project h3{position: relative;left: 25px;color: #fff;font-size: 28px;font-weight: 700;z-index: 5; margin:130px 0 80px 0px;}
 			.contentPage .projects .project h3 span{font-style: italic;font-weight: 300;}
-			.contentPage .projects .project p{  position: relative;left: 25px; top:10px;color: #fff;border: 2px solid #fff;z-index: 30;}
-			.contentPage .projects .project:hover p {color: #333222;background: #fff;}
+			.contentPage .projects .project a.viewMore{position: relative;left: 25px; top:10px;color: #fff;border: 2px solid #fff;z-index: 30;}
+			.contentPage .projects .project:hover a.viewMore{color: #333222;background: #fff; text-decoration: none;}
 			.contentPage .projects .project:hover img{transform: scale(1.05);-webkit-transform: scale(1.05);-moz-transform: scale(1.05);-o-transform: scale(1.05);-ms-transform: scale(1.05);}
-			.contentPage .projects .project a{display: block;width: 100%;height: 100%;text-decoration: none;background: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);position: absolute;z-index: 2;left: 0;top: 0;}
+			.contentPage .projects .project a.all{display: block;width: 100%;height: 100%;text-decoration: none;background: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);position: absolute;z-index: 2;left: 0;top: 0;}
+
+			.contentPage .contact{background-color: #333}
+			.contentPage .contact h2{margin-bottom: 15px; color: #fff;font-size: 28px;font-weight: 700;width: 90%;max-width: 870px;margin: 0 auto;padding-top: 50px;margin-bottom: 20px;line-height: 50px;}
+			.contentPage .contact p{margin-bottom: 15px; color: #fff;font-size: 28px;font-weight: 300;width: 90%;max-width: 870px;margin: 0 auto;margin-bottom: 60px;line-height: 50px;}
+			.contentPage .contact a{color: #fff;border: 2px solid #fff;}
+			.contentPage .contact a:hover {color: #333333;background: #fff;}
+			
+			.contentPage .footer{padding: 20px 0;}
+			.contentPage .footer p{margin: 0; float: left;color: #a9a9a9;font-size: 12px;font-weight: 600;}
+			.contentPage .footer ul{list-style: none; float: right; margin: 0;}
+			.contentPage .footer ul li{color: #a9a9a9;font-size: 20px;font-weight: 600;margin-left: 20px;display: inline-block;}
+			.contentPage .footer ul li a{color: #a9a9a9;-webkit-transition: all 0.5s ease-out;-moz-transition: all 0.5s ease-out;-o-transition: all 0.5s ease-out;-ms-transition: all 0.5s ease-out;}
+
+			.contentPage .footer ul li.facebook a:hover{color: #3b5998;}
+			.contentPage .footer ul li.linkedin a:hover{color: #007bb6;}
+
+
+
+			/* Largura mínima de 768 pixels. Tablets.*/
+			@media screen and (max-width: 768px) {
+				ul.nav li {display: inline-block; margin: 0 5px;}
+				.contentPage .projects .project{height: 225px;}
+				.contentPage .projects .project h3{margin: 40px 0 20px 0px;}
+				.contentPage .footer ul{margin: 15px 0 0 0;width: 100%;}
+			}
+			/* Largura mínima de 992 pixels. Monitores.*/
+			@media screen and (max-width: 992px) {
+
+			}
+			/* Largura mínima de 1200 pixels. TVs.*/
+			@media screen and (max-width: 1200px){
+
+			}
+			/* Largura mínima de 1200 pixels. TVs.*/
+			@media screen and (min-width: 1200px){
+
+			}
+	/*----------------------------------------------------*/
+			.loader{background: #000; position: fixed;z-index: 200; left: 0; top: 0; height: 100%; width: 100%}
+			.loading,
+			.loading::before,
+			.loading::after{
+			  position: absolute;
+			  top: 50%;
+			  left: 50%;
+			  -webkit-border-radius: 999px;
+			  -moz-border-radius: 999px;
+			  border-radius: 999px;
+			}
+			.loading{border: 1px solid rgba(255 , 0, 0, 0.1);border-left-color: rgba(255, 0, 0, 0.4);}
+			.loading::before{border: 1px solid rgba(255, 255, 0, 0.1);border-left-color: rgba(255, 255, 0, 0.4);}
+			.loading::after{border: 1px solid rgba(0, 255, 255, 0.1);border-left-color: rgba(0, 255, 255, 0.4);}
+			
+
+			.loading {
+					margin: -25px 0 0 -25px;
+					height: 50px;
+					width: 50px;
+					-webkit-animation: animation-rotate 1000ms linear infinite;
+					-moz-animation: animation-rotate 1000ms linear infinite;
+					-o-animation: animation-rotate 1000ms linear infinite;
+					animation: animation-rotate 1000ms linear infinite;
+			}
+
+			.loading::before {
+					content: "";
+					margin: -23px 0 0 -23px;
+					height: 44px;
+					width: 44px;
+					-webkit-animation: animation-rotate 1000ms linear infinite;
+					-moz-animation: animation-rotate 1000ms linear infinite;
+					-o-animation: animation-rotate 1000ms linear infinite;
+					animation: animation-rotate 1000ms linear infinite;
+			}
+
+			.loading::after {
+					content: "";
+					margin: -29px 0 0 -29px;
+					height: 56px;
+					width: 56px;
+					-webkit-animation: animation-rotate 2000ms linear infinite;
+					-moz-animation: animation-rotate 2000ms linear infinite;
+					-o-animation: animation-rotate 2000ms linear infinite;
+					animation: animation-rotate 2000ms linear infinite;
+			}
+
+
+			@-webkit-keyframes animation-rotate {
+			  100% {
+			    -webkit-transform: rotate(360deg);
+			  }
+			}
+
+			@-moz-keyframes animation-rotate {
+			  100% {
+			    -moz-transform: rotate(360deg);
+			  }
+			}
+
+			@-o-keyframes animation-rotate {
+			  100% {
+			    -o-transform: rotate(360deg);
+			  }
+			}
+
+			@keyframes animation-rotate {
+			  100% {
+			    transform: rotate(360deg);
+			  }
+			}
+/*----------------------------------------------------*/
 
 		</style>
   </head>
   <body>
+	<div class="loader">
+		<div class="loading"></div>
+	</div>
+
 	<div class="container-fluid main">
     	<header class="row header">
 			<section class="container">
@@ -104,7 +226,7 @@
 			</section>
     	</header> 
     	<aside class="contentPage">
-	    	<div class="row about" style="background-color: #fff;padding: 5px;">
+	    	<div class="row about">
 				<div class="container">
 					<h2>Mussum ipsum cacilds, vidis litro abertis. </h2>
 					<a href="#" class="viewMore">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i> </a>
@@ -115,46 +237,54 @@
 	    		  	<a href="#"></a>
 	    			<img src="<?=base_url('public/img/cover_cinemap.jpg')?>"  alt=""  title="" />
 	    			<h3>Mussum ipsum <span>cacilds, vidis</span> litro.</h3>
-	    			<p class="viewMore">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></p>
+	    			<a href="#" class="viewMore">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
 	    		</div>
 	    		<div class="col-md-8 project" data-sr='move 0px'>
 	    		  	<a href="#"></a>
 	    			<img src="<?=base_url('public/img/cover_cinemap.jpg')?>"  alt=""  title="" />
 	    			<h3>Mussum ipsum <span>cacilds, vidis</span> litro.</h3>
-	    			<p class="viewMore">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></p>
+	    			<a href="#" class="viewMore">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
 	    		</div>
 	    		<div class="col-md-16 project" data-sr='move 0px'>
 	    		  	<a href="#"></a>
 	    			<img src="<?=base_url('public/img/cover_cinemap.jpg')?>"  alt=""  title="" />
 	    			<h3>Mussum ipsum <span>cacilds, vidis</span> litro.</h3>
-	    			<p class="viewMore">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></p>
+	    			<a href="#" class="viewMore">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
 	    		</div>
 	    		<div class="col-md-8 project" data-sr='move 0px'>
 	    		  	<a href="#"></a>
 	    			<img src="<?=base_url('public/img/cover_cinemap.jpg')?>"  alt=""  title="" />
 	    			<h3>Mussum ipsum <span>cacilds, vidis</span> litro.</h3>
-	    			<p class="viewMore">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></p>
+	    			<a href="#" class="viewMore">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
 	    		</div>
 	    		<div class="col-md-8 project" data-sr='move 0px'>
 	    		  	<a href="#"></a>
 	    			<img src="<?=base_url('public/img/cover_cinemap.jpg')?>"  alt=""  title="" />
 	    			<h3>Mussum ipsum <span>cacilds, vidis</span> litro.</h3>
-	    			<p class="viewMore">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></p>
+	    			<a href="#" class="viewMore">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
 	    		</div>
 	    		<div class="col-md-16 project" data-sr='move 0px'>
 	    		  	<a href="#"></a>
 	    			<img src="<?=base_url('public/img/cover_cinemap.jpg')?>"  alt=""  title="" />
 	    			<h3>Mussum ipsum <span>cacilds, vidis</span> litro.</h3>
-	    			<p class="viewMore">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></p>
+	    			<a href="#" class="viewMore">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
 	    		</div>
 	    	</div>
-	    	<div class="row contact" style="background-color: #00f;padding: 5px; height:300px">
-				<div class="container"  >
+	    	<div class="row contact">
+				<div class="container">
+					<h2>Mussum ipsum cacilds, vidis litro abertis. </h2>
+					<p class="italic">Mussum ipsum cacilds, vidis litro abertis, vidis litro abertis. </p>
+					<a href="#" class="viewMore">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i> </a>
 				</div>
 	    	</div>
-	    	<div class="row footer" style="background-color: #f65;padding: 5px; height:300px">
-				<div class="container"  >
-				</div>
+	    	<div class="row footer">
+	    		<div class="container">
+		    		<p  class="col-md-8 project">© 2014 - Portfólio Alex Madeira. All rights reserved</p>
+		    		<ul  class="col-md-8 project redes">
+		    			<li class="facebook"><a href="https://www.facebook.com/alex.c.madeira"><i class="fa fa-facebook"></i></a></li>
+		    			<li class="linkedin"><a href="https://br.linkedin.com/pub/alex-madeira/65/b84/604"><i class="fa fa-linkedin"></i></a></li>
+		    		</ul>
+		    	</div>
 	    	</div>
 	    </aside>
 	</div>    
@@ -167,7 +297,42 @@
     <script src="<?=base_url('public/js/bootstrap.min.js')?>"></script>
     <script>
 		var scene = document.getElementById('scene');
-	</script>
 
+
+		jQuery(function( $ ){
+		    $(".main").hide();
+		    $(".loader").show();
+		    $(window).load(function() {
+		        	$(".loader").fadeOut(function() {
+		            $(".main").fadeIn(1000);
+		      	  }); 
+		 	 });
+								
+		});
+
+	    $(document).ready(function(){
+	        
+	        $('nav ul li a').click(function(e) {
+					var anchor=$(this);
+					
+					$('html, body').stop().animate({
+						scrollTop: $(anchor.attr('href')).offset().top
+					}, 1000, 'easeInOutExpo');
+					e.preventDefault();
+			});
+			
+			/*--Fade entre les pages--*/
+		
+			$("a.transition").click(function(event){
+				event.preventDefault();
+				linkLocation = this.href;
+				$(".main").fadeOut(1000, redirectPage);
+				
+				function redirectPage() {
+				window.location = linkLocation;
+				}    
+			});					
+		});
+	</script>
   </body>
 </html>
