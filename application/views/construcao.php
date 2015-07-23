@@ -37,7 +37,7 @@
 	    <!-- Bootstrap -->
 	    <link href="<?=base_url('public/css/bootstrap.min.css')?>" rel="stylesheet">
 	    <link href="<?=base_url('public/fonts/font.css')?>" rel="stylesheet">
-	    <link href="<?=base_url('public/css/style.css')?>" rel="stylesheet">
+	    <link href="<?=base_url('public/css/style-construct.css')?>" rel="stylesheet">
 	   
 	    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
