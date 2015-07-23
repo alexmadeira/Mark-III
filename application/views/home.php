@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -40,7 +41,7 @@
 
 	    <link href="<?=base_url('public/css/bootstrap.min.css')?>" rel="stylesheet">
 	    <link href="<?=base_url('public/fonts/font.css')?>" rel="stylesheet">
-	   
+
 	    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	    <!--[if lt IE 9]>
@@ -50,9 +51,10 @@
 		
 		<style type="text/css">
 			html,body{height: 100%; line-height: 1;font-family: 'Open Sans', Arial, sans-serif; background: #000}
-			.main{height: 100%; padding: 0}
 			.nav>li>a:hover, .nav>li>a:focus{background-color:transparent;}
+			.main{height: 100%; padding: 0}
 			.main .row {margin-left: 0;margin-right: 0;}
+
 			.header{text-align: center;background: url('<?=base_url('public/img/alex-madeira-bg-header.jpg')?>');background-repeat: no-repeat;background-attachment: fixed;background-size: cover;background-position: center center;height: 100%; color:#707070;}
 			.header strong{color: #fff}
 			.header .container{position: fixed;width: 100%;top: 50%;margin-top: -225px;z-index: 0; height: 100%;}
@@ -75,11 +77,11 @@
 			.italic{font-style: italic;}
 
 			.contentPage h2{color: #333333;font-size: 28px;font-weight:l700;width: 90%;max-width: 870px; margin: 0 auto;padding-top: 30px;margin-bottom: 60px;line-height: 50px;}
-			.viewMore{text-decoration: none;color: #333333;text-transform: uppercase;font-size: 14px;font-weight: 700;padding: 18px 32px;border: 2px solid #333333;-webkit-transition: all 0.2s ease-out;-moz-transition: all 0.2s ease-out;-o-transition: all 0.2s ease-out;-ms-transition: all 0.2s ease-out;display: inline-block; margin-bottom: 30px; position: relative}
+			.viewMore{text-decoration: none;color: #333333;text-transform: uppercase;font-size: 14px;font-weight: 700;padding: 18px 32px;border: 2px solid #333333;-webkit-transition: all 0.2s ease-out;-moz-transition: all 0.2s ease-out;-o-transition: all 0.2s ease-out;-ms-transition: all 0.2s ease-out;display: inline-block; margin-bottom: 30px}
 			.viewMore:hover{color: #fff;background: #333333;}
 			.viewMore i{margin-left: 10px;}
+			
 			.contentPage .projects {margin-left: 3px;margin-right: 3px;}
-
 			.contentPage .projects .project{padding: 5px;position: relative;overflow: hidden;border: 3px solid #fff;text-align: left;height: 400px;}
 			.contentPage .projects .project img{width: 100%;position: absolute;left: 0;top: 0;  transform: scale(1);-webkit-transform: scale(1);-moz-transform: scale(1);-o-transform: scale(1);-ms-transform: scale(1);-webkit-transition: all .3s ease-out;-moz-transition: all .3s ease-out;-o-transition: all .3s ease-out;-ms-transition: all .3s ease-out;}
 			.contentPage .projects .project h3{position: relative;left: 25px;color: #fff;font-size: 28px;font-weight: 700;z-index: 5; margin:130px 0 80px 0px;}
@@ -174,7 +176,6 @@
 					animation: animation-rotate 2000ms linear infinite;
 			}
 
-
 			@-webkit-keyframes animation-rotate {
 			  100% {
 			    -webkit-transform: rotate(360deg);
@@ -212,69 +213,71 @@
 			<section class="container">
 				<h1 class="logo">Alex Madeira</h1>
 				<p><strong>Mussum ipsum cacilds</strong>, vidis litro abertis. Consetis adipiscings elitis. Pra lá , <strong>depois divoltis porris</strong>, paradis.</p>
-				<ul class="nav">
-					<li>
-						<a href="#" class="about">Sobre</a>
-					</li>
-					<li>
-						<a href="#" class="project">Projetos</a>
-					</li>
-					<li>
-						<a href="#" class="contact">Contato</a>
-					</li>
-				</ul>
+				<nav>
+					<ul class="nav">
+						<li>
+							<a href="#about" class="about">Sobre</a>
+						</li>
+						<li>
+							<a href="#projects" class="project">Projetos</a>
+						</li>
+						<li>
+							<a href="#contact" class="contact">Contato</a>
+						</li>
+					</ul>
+				</nav>
 			</section>
     	</header> 
     	<aside class="contentPage">
-	    	<div class="row about">
+	    	<div class="row about" id="about">
 				<div class="container">
 					<h2>Mussum ipsum cacilds, vidis litro abertis. </h2>
 					<a href="#" class="viewMore">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i> </a>
 				</div>
 	    	</div>
-	    	<div class="row projects">
+	    	<div class="row projects" id="projects">
 	    		<div class="col-md-8 project" data-sr='move 0px'>
-	    		  	<a href="#"></a>
+	    		  	<a href="#" class="transition all"></a>
 	    			<img src="<?=base_url('public/img/cover_cinemap.jpg')?>"  alt=""  title="" />
 	    			<h3>Mussum ipsum <span>cacilds, vidis</span> litro.</h3>
-	    			<a href="#" class="viewMore">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
+	    			<a href="#" class="viewMore transition">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
 	    		</div>
 	    		<div class="col-md-8 project" data-sr='move 0px'>
-	    		  	<a href="#"></a>
+	    		  	<a href="#" class="transition all"></a>
 	    			<img src="<?=base_url('public/img/cover_cinemap.jpg')?>"  alt=""  title="" />
 	    			<h3>Mussum ipsum <span>cacilds, vidis</span> litro.</h3>
-	    			<a href="#" class="viewMore">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
+	    			<a  ahref="#" class="viewMore transition">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
 	    		</div>
 	    		<div class="col-md-16 project" data-sr='move 0px'>
-	    		  	<a href="#"></a>
+	    		  	<a href="#" class="transition all"></a>
 	    			<img src="<?=base_url('public/img/cover_cinemap.jpg')?>"  alt=""  title="" />
 	    			<h3>Mussum ipsum <span>cacilds, vidis</span> litro.</h3>
-	    			<a href="#" class="viewMore">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
+	    			<a ahref="#" class="viewMore transition">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
 	    		</div>
 	    		<div class="col-md-8 project" data-sr='move 0px'>
-	    		  	<a href="#"></a>
+	    		  	<a href="#" class="transition all"></a>
 	    			<img src="<?=base_url('public/img/cover_cinemap.jpg')?>"  alt=""  title="" />
 	    			<h3>Mussum ipsum <span>cacilds, vidis</span> litro.</h3>
-	    			<a href="#" class="viewMore">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
+	    			<a  ahref="#" class="viewMore transition">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
 	    		</div>
 	    		<div class="col-md-8 project" data-sr='move 0px'>
-	    		  	<a href="#"></a>
+	    		  	<a href="#" class="transition all"></a>
 	    			<img src="<?=base_url('public/img/cover_cinemap.jpg')?>"  alt=""  title="" />
 	    			<h3>Mussum ipsum <span>cacilds, vidis</span> litro.</h3>
-	    			<a href="#" class="viewMore">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
+	    			<a  ahref="#" class="viewMore transition">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
 	    		</div>
 	    		<div class="col-md-16 project" data-sr='move 0px'>
-	    		  	<a href="#"></a>
+	    		  	<a href="#" class="transition all"></a>
 	    			<img src="<?=base_url('public/img/cover_cinemap.jpg')?>"  alt=""  title="" />
 	    			<h3>Mussum ipsum <span>cacilds, vidis</span> litro.</h3>
-	    			<a href="#" class="viewMore">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
+	    			<a  ahref="#" class="viewMore transition">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
 	    		</div>
 	    	</div>
-	    	<div class="row contact">
+	    	<div class="row contact" id="contact">
 				<div class="container">
 					<h2>Mussum ipsum cacilds, vidis litro abertis. </h2>
 					<p class="italic">Mussum ipsum cacilds, vidis litro abertis, vidis litro abertis. </p>
-					<a href="#" class="viewMore">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i> </a>
+					<a href="mailto:alex.c.madeira@gmail.com" class="viewMore">Entre em contato <i class="fa fa-long-arrow-right fa-lg"></i> </a>
 				</div>
 	    	</div>
 	    	<div class="row footer">
@@ -293,11 +296,12 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
 
 	<script type="text/javascript" src="<?=base_url('public/js/scrollReveal.js-master/scrollReveal.js')?>"></script>
+	<script type="text/javascript" src="<?=base_url('public/js/jquery.easing.1.3.js')?>"></script>
+
 	<script type="text/javascript">window.sr = new scrollReveal();</script>
-    <script src="<?=base_url('public/js/bootstrap.min.js')?>"></script>
+    <script src="http://www.alexmadeira.com.br/public/js/bootstrap.min.js"></script>
     <script>
 		var scene = document.getElementById('scene');
-
 
 		jQuery(function( $ ){
 		    $(".main").hide();
@@ -314,7 +318,6 @@
 	        
 	        $('nav ul li a').click(function(e) {
 					var anchor=$(this);
-					
 					$('html, body').stop().animate({
 						scrollTop: $(anchor.attr('href')).offset().top
 					}, 1000, 'easeInOutExpo');
@@ -331,8 +334,10 @@
 				function redirectPage() {
 				window.location = linkLocation;
 				}    
-			});					
+			});
+						
 		});
+	    
 	</script>
   </body>
 </html>
