@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -42,7 +41,7 @@
 	    <link href="<?=base_url('public/css/bootstrap.min.css')?>" rel="stylesheet">
 	    <link href="<?=base_url('public/fonts/font.css')?>" rel="stylesheet">
 	    <link href="<?=base_url('public/css/loader.css')?>" rel="stylesheet">
-	    <link href="<?=base_url('public/css/style.css')?>" rel="stylesheet">
+	    <link href="<?=base_url('public/css/projeto.css')?>" rel="stylesheet">
 
 	    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -58,33 +57,71 @@
 	</div>
 
 	<div class="container-fluid main">
-    	<header class="row header">
-			<section class="container">
-				<h1 class="logo">Alex Madeira</h1>
-				<p><strong>Mussum ipsum cacilds</strong>, vidis litro abertis. Consetis adipiscings elitis. Pra lá , <strong>depois divoltis porris</strong>, paradis.</p>
-				<nav>
-					<ul class="nav">
-						<li>
-							<a href="#about" class="about">Sobre</a>
-						</li>
-						<li>
-							<a href="#projects" class="project">Projetos</a>
-						</li>
-						<li>
-							<a href="#contact" class="contact">Contato</a>
-						</li>
-					</ul>
-				</nav>
-			</section>
-    	</header> 
+    	<header class="row header" style="background-image: url('<?=base_url('/public/img/bg01.jpg')?>')">
+    		<a href="<?=site_url('home')?>" class="close transition" title="Encerrar o projeto"></a>
+			<div class="nav">
+				<ul>
+					<li>
+						<em>Categoria</em>
+						<p>Web</p>
+					</li>
+					<li>
+						<em>Projeto</em>
+						<p>E-Commerce</p>
+					</li>
+					<li>
+						<em>Agencia</em>
+						<p><a href="#" class="staMonica agencia">Sta Monica</a></p>
+					</li>
+					<li>
+						<em>Ano</em>
+						<p>2015</p>
+					</li>
+				</ul>
+			</div>
+			<a href="#" class="projetoLogo" style="background-image: url('<?=base_url('/public/upload/alex-madeira-game7-logo.png')?>')">Projeto Nome</a>
+			<div class="project">
+				<h1>Vidis litro abertis</h1>
+				<p>- Consetis adipiscings elitis. Pra lá -</p>
+			</div>
+			<img src="<?=base_url('/public/img/tranche_bas1.png')?>" alt="" title="" class="trancher1" />
+    	</header>
     	<aside class="contentPage">
-	    	<div class="row about" id="about">
+	    	<div class="row apresentacao col-md-16">
+	    		<div class="container">
+	    			<div class="mobile">
+	    				<img src="<?=base_url('/public/upload/alex-madeira-game7-mobile-v1.png')?>" alt="" title="" class="iphone G L" width="200">
+	    				<img src="<?=base_url('/public/upload/alex-madeira-game7-mobile-v2.png')?>" alt="" title="" class="iphone M R" width="200">
+	    			</div>
+	    			<div class="produto">
+	    				<img src="<?=base_url('/public/upload/alex-madeira-game7-produto-fone.png')?>" alt="" title="" class="">
+	    			</div>
+	    		</div>
+	    	</div>
+			<div class="row separaca col-md-16" style="background-image: url('<?=base_url('/public/upload/alex-madeira-bg-game7-day-7.jpg')?>')">
+				<img src="<?=base_url('/public/img/tranche_bas2.png')?>" alt="" title="" class="trancher2" />
+				<div class="overlay"></div>
+				<img src="<?=base_url('/public/img/tranche_bas3.png')?>" alt="" title="" class="trancher3" />
+			</div>
+	    	<div class="row apresentacao col-md-16">
+	    		<div class="container">
+	    			<div class="descricao">
+		    			<h2>Vidis litro abertis</h2>
+		    			<hr>
+		    			<p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+	    			</div>
+	    			<div class="desktop">
+	    				<img src="<?=base_url('/public/upload/alex-madeira-game7-desktop.png')?>" alt="" title="" class="iMac G L" width="600">
+	    			</div>
+		    	</div>
+	    	</div>
+			<div class="row viewMore col-md-16">
 				<div class="container">
 					<h2>Mussum ipsum cacilds, vidis litro abertis. </h2>
-					<a href="#" class="viewMore">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i> </a>
+					<p class="italic">Mussum ipsum cacilds, vidis litro abertis, vidis litro abertis. </p>
 				</div>
-	    	</div>
-	    	<div class="row projects" id="projects">
+			</div>
+			<div class="row projects">
 	    		<div class="col-md-8 project" data-sr='move 0px'>
 	    		  	<a href="<?=site_url('projeto')?>" class="transition all"></a>
 	    			<img src="<?=base_url('public/img/cover_cinemap.jpg')?>"  alt=""  title="" />
@@ -95,52 +132,21 @@
 	    		  	<a href="<?=site_url('projeto')?>" class="transition all"></a>
 	    			<img src="<?=base_url('public/img/cover_cinemap.jpg')?>"  alt=""  title="" />
 	    			<h3>Mussum ipsum <span>cacilds, vidis</span> litro.</h3>
-	    			<a  ahref="<?=site_url('projeto')?>" class="viewMore transition">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
+	    			<a href="<?=site_url('projeto')?>" class="viewMore transition">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
 	    		</div>
-	    		<div class="col-md-16 project" data-sr='move 0px'>
-	    		  	<a href="<?=site_url('projeto')?>" class="transition all"></a>
-	    			<img src="<?=base_url('public/img/cover_cinemap.jpg')?>"  alt=""  title="" />
-	    			<h3>Mussum ipsum <span>cacilds, vidis</span> litro.</h3>
-	    			<a ahref="<?=site_url('projeto')?>" class="viewMore transition">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
-	    		</div>
-	    		<div class="col-md-8 project" data-sr='move 0px'>
-	    		  	<a href="<?=site_url('projeto')?>" class="transition all"></a>
-	    			<img src="<?=base_url('public/img/cover_cinemap.jpg')?>"  alt=""  title="" />
-	    			<h3>Mussum ipsum <span>cacilds, vidis</span> litro.</h3>
-	    			<a a href="<?=site_url('projeto')?>" class="viewMore transition">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
-	    		</div>
-	    		<div class="col-md-8 project" data-sr='move 0px'>
-	    		  	<a href="<?=site_url('projeto')?>" class="transition all"></a>
-	    			<img src="<?=base_url('public/img/cover_cinemap.jpg')?>"  alt=""  title="" />
-	    			<h3>Mussum ipsum <span>cacilds, vidis</span> litro.</h3>
-	    			<a  ahref="<?=site_url('projeto')?>" class="viewMore transition">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
-	    		</div>
-	    		<div class="col-md-16 project" data-sr='move 0px'>
-	    		  	<a href="<?=site_url('projeto')?>" class="transition all"></a>
-	    			<img src="<?=base_url('public/img/cover_cinemap.jpg')?>"  alt=""  title="" />
-	    			<h3>Mussum ipsum <span>cacilds, vidis</span> litro.</h3>
-	    			<a a href="<?=site_url('projeto')?>" class="viewMore transition">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
-	    		</div>
-	    	</div>
-	    	<div class="row contact" id="contact">
-				<div class="container">
-					<h2>Mussum ipsum cacilds, vidis litro abertis. </h2>
-					<p class="italic">Mussum ipsum cacilds, vidis litro abertis, vidis litro abertis. </p>
-					<a href="mailto:alex.c.madeira@gmail.com" class="viewMore">Entre em contato <i class="fa fa-long-arrow-right fa-lg"></i> </a>
-				</div>
 	    	</div>
 	    	<div class="row footer">
 	    		<div class="container">
 		    		<p  class="col-md-8 project">© 2014 - Portfólio Alex Madeira. All rights reserved</p>
 		    		<ul  class="col-md-8 project redes">
-		    			<li class="facebook"><a href="https://www.facebook.com/alex.c.madeira" target="_blank"><i class="fa fa-facebook"></i></a></li>
-		    			<li class="linkedin"><a href="https://br.linkedin.com/pub/alex-madeira/65/b84/604" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+		    			<li class="facebook"><a href="https://www.facebook.com/alex.c.madeira"><i class="fa fa-facebook"></i></a></li>
+		    			<li class="linkedin"><a href="https://br.linkedin.com/pub/alex-madeira/65/b84/604"><i class="fa fa-linkedin"></i></a></li>
 		    		</ul>
 		    	</div>
 	    	</div>
 	    </aside>
-	</div>    
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins)-->
+	</div>
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins)-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
 
@@ -148,7 +154,7 @@
 	<script type="text/javascript" src="<?=base_url('public/js/jquery.easing.1.3.js')?>"></script>
 
 	<script type="text/javascript">window.sr = new scrollReveal();</script>
-    <script src="http://www.alexmadeira.com.br/public/js/bootstrap.min.js"></script>
+    <script src="<?=base_url('public/js/bootstrap.min.js')?>"></script>
     <script>
 		var scene = document.getElementById('scene');
 
