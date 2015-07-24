@@ -65,17 +65,24 @@ html,body{height: 100%; line-height: 1;font-family: 'Open Sans', Arial, sans-ser
 .header .project h1{color: #3d4543;font-size: 30px;font-weight: 700;max-width: 800px;width: 90%;margin: 0 auto;margin-top: 70px;text-align: center;line-height: 1.5em;}
 .header .project p{width: 90%;position: relative;font-style: italic;font-weight: 300;color: #a2a4a3;font-size: 23px;margin: 0 auto;margin-top: 10px;padding-bottom: 8%;text-align: center;z-index: 20;line-height: 1.5em;}
 
-.trancher2{width: 100%; position: absolute;bottom: -60px;}
+.trancher1{width: 100%; position: absolute;bottom:0;left: 0;  z-index: 2;}
+.trancher2{width: 100%; position: absolute;top:0;left: 0;  z-index: 2;}
+.trancher3{width: 100%; position: absolute;bottom:0;left: 0;  z-index: 2;}
 
+.apresentacao{z-index: 10; position: relative;}
 .apresentacao .container{margin-top: -300px}
 .apresentacao .container .mobile{text-align: left;padding: 0 0 0 130px;position: relative;z-index: 5;float: left;}
 .apresentacao .container .produto{float: right;padding: 0 120px 0 0;position: relative;}
 
+.separaca{height: 800px;padding: 0; background-repeat: no-repeat;background-attachment: fixed;background-size: cover;background-position: top center;}
+.separaca .overlay{position: absolute;width: 100%;height: 100%;background: #26292E;opacity: 0.7;filter: alpha(opacity=70);z-index: 0;}
 .apresentacao .container .desktop{float: right; text-align: left; margin: 160px 0 0 0}
 .apresentacao .container .descricao{float: left; width: 40%; margin: 250px 0 0 0}
 .apresentacao .container .descricao h2{font-weight: bold; font-size: 50px;}
-.apresentacao .container .descricao hr{border: 0;border-bottom: 1px solid #f7d019;width: 40px;margin: 0 auto;margin-top: 25px;margin-bottom: 15px;}
+.apresentacao .container .descricao hr{border: 0;border-bottom: 1px solid #0C978F;width: 40px;margin: 0 auto;margin-top: 25px;margin-bottom: 15px;}
 .apresentacao .container .descricao p{font-size: 18px;font-weight: 300;line-height: 30px;}
+
+
 
 
 .contentPage{background: #fff;position: relative;z-index: 100;height: auto; text-align: center;}
@@ -152,10 +159,10 @@ html,body{height: 100%; line-height: 1;font-family: 'Open Sans', Arial, sans-ser
 				<h1>Vidis litro abertis</h1>
 				<p>- Consetis adipiscings elitis. Pra lá -</p>
 			</div>
-			<img src="tranche_bas2.png" alt="" title="" class="trancher2" />
+			<img src="tranche_bas1.png" alt="" title="" class="trancher1" />
     	</header>
     	<aside class="contentPage">
-	    	<div class="row apresentacao">
+	    	<div class="row apresentacao col-md-16">
 	    		<div class="container">
 	    			<div class="mobile">
 	    				<img src="alex-madeira-game7-mobile-v1.png" alt="" title="" class="iphone G L" width="200">
@@ -164,7 +171,15 @@ html,body{height: 100%; line-height: 1;font-family: 'Open Sans', Arial, sans-ser
 	    			<div class="produto">
 	    				<img src="alex-madeira-game7-produto-fone.png" alt="" title="" class="">
 	    			</div>
-	    			<div class="clear"></div>
+	    		</div>
+	    	</div>
+			<div class="row separaca col-md-16" style="background-image: url('alex-madeira-bg-game-7-day-7.jpg')">
+				<img src="tranche_bas2.png" alt="" title="" class="trancher2" />
+				<div class="overlay"></div>
+				<img src="tranche_bas3.png" alt="" title="" class="trancher3" />
+			</div>
+	    	<div class="row apresentacao col-md-16">
+	    		<div class="container">
 	    			<div class="descricao">
 		    			<h2>Vidis litro abertis</h2>
 		    			<hr>
