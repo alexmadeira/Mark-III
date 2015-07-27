@@ -29,9 +29,9 @@
 	    	<div class="row projects" id="projects">
 	    		<div class="col-md-8 project" data-sr='move 0px'>
 	    		  	<a href="<?=site_url('projeto')?>" class="transition all"></a>
-	    			<img src="<?=base_url('public/img/cover_cinemap.jpg')?>"  alt=""  title="" />
-	    			<h3>Mussum ipsum <span>cacilds, vidis</span> litro.</h3>
-	    			<a href="<?=site_url('projeto')?>" class="viewMore transition">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
+	    			<img src="<?=base_url('public/upload/alex-madeira-game-7-pre-page.jpg')?>"  alt=""  title="" />
+	    			<h3>Os melhores <span>equipamentos</span> Gamers.</h3>
+	    			<a href="<?=site_url('projeto')?>" class="viewMore transition">Explore Game 7 <i class="fa fa-long-arrow-right fa-lg"></i></a>
 	    		</div>
 	    		<div class="col-md-8 project" data-sr='move 0px'>
 	    		  	<a href="<?=site_url('projeto')?>" class="transition all"></a>

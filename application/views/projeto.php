@@ -1,7 +1,7 @@
 <?php $this->load->view('includes/_header');?>
 	<div class="container-fluid main">
 		<a id="close" class="transition" href="<?=site_url('home')?>"title="Encerrar o projeto"><p>Encerrar o projeto</p><i></i></a>
-    	<header class="row header" style="background-image: url('<?=base_url('/public/img/bg01.jpg')?>')">
+    	<header class="row header dark" style="background-image: url('<?=base_url('/public/upload/alex-madeira-game-7-bg.jpg')?>')">
 			<div class="nav">
     		<a href="<?=site_url('home')?>" class="close transition" title="Encerrar o projeto"></a>
 				<ul>
