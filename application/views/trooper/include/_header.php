@@ -36,8 +36,8 @@
           </a>
           <nav class="ls-dropdown-nav ls-user-menu">
             <ul>
-              <li><a href="#">Conta</a></li>
-              <li><a href="#">Logout</a></li>
+              <li><a href="<?=site_url('trooper/configuracao/acesso')?>">Conta</a></li>
+              <li><a href="<?=site_url('trooper/action_login/logoff')?>">Sair</a></li>
             </ul>
           </nav>
         </div>
