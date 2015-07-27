@@ -55,3 +55,5 @@ $route['translate_uri_dashes'] = FALSE;
 
 
 $route['trooper'] = 'trooper/dashboard';
+$route['trooper/projetos/(:num)'] = 'trooper/projetos/projeto/(:num)';
+
