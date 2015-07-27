@@ -1,8 +1,9 @@
 <?php $this->load->view('includes/_header');?>
 	<div class="container-fluid main">
+		<a id="close" class="transition" href="<?=site_url('home')?>"title="Encerrar o projeto"><p>Encerrar o projeto</p><i></i></a>
     	<header class="row header" style="background-image: url('<?=base_url('/public/img/bg01.jpg')?>')">
-    		<a href="<?=site_url('home')?>" class="close transition" title="Encerrar o projeto"></a>
 			<div class="nav">
+    		<a href="<?=site_url('home')?>" class="close transition" title="Encerrar o projeto"></a>
 				<ul>
 					<li>
 						<em>Categoria</em>
@@ -41,12 +42,12 @@
 	    			</div>
 	    		</div>
 	    	</div>
-			<div class="row separaca col-md-16" style="background-image: url('<?=base_url('/public/upload/alex-madeira-bg-game7-day-7.jpg')?>')">
+			<div class="row separador col-md-16" style="background-image: url('<?=base_url('/public/upload/alex-madeira-bg-game7-day-7.jpg')?>')">
 				<img src="<?=base_url('/public/img/tranche_bas2.png')?>" alt="" title="" class="trancher2" />
 				<div class="overlay"></div>
 				<img src="<?=base_url('/public/img/tranche_bas3.png')?>" alt="" title="" class="trancher3" />
 			</div>
-	    	<div class="row apresentacao col-md-16">
+	    	<div class="row apresentacao descricao col-md-16">
 	    		<div class="container">
 	    			<div class="descricao">
 		    			<h2>Vidis litro abertis</h2>

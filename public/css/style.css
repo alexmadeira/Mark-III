@@ -1,4 +1,6 @@
 html,body{height: 100%; line-height: 1;font-family: 'Open Sans', Arial, sans-serif; background: #000}
+.clear{clear: both}
+::selection{background-color:#0C978F;color:#222;}
 .nav>li>a:hover, .nav>li>a:focus{background-color:transparent;}
 .main{height: 100%; padding: 0}
 .main .row {margin-left: 0;margin-right: 0;}
@@ -62,6 +64,9 @@ ul.nav li{display: inline-block;margin: 0 45px;}
 	.contentPage .projects .project{height: 225px;}
 	.contentPage .projects .project h3{margin: 40px 0 20px 0px;}
 	.contentPage .footer ul{margin: 15px 0 0 0;width: 100%;}
+		
+	.contentPage .footer p{float: none;color: #a9a9a9;font-size: 10px;font-weight: 600;line-height: 40px; font: inherit;    padding: 0;}
+
 }
 /* Largura mínima de 992 pixels. Monitores.*/
 @media screen and (max-width: 992px) {

@@ -1,12 +1,18 @@
 html,body{height: 100%; line-height: 1;font-family: 'Open Sans', Arial, sans-serif; background: #000}
 .clear{clear: both}
+::selection{background-color:#0C978F;color:#222;}
 .nav>li>a:hover, .nav>li>a:focus{background-color:transparent;}
 .main{height: 100%; padding: 0}
 .main .row {margin-left: 0;margin-right: 0;}
 
 .header{position: relative; background-repeat: no-repeat; background-position:  center top;background-size: cover;  height: 130%;}
-.header a.close {position: absolute;display: block;width: 30px;height: 30px;background: url('../img/close_black.png');background-size: 30px;right: 55px;top: 105px;-webkit-transition: all .6s cubic-bezier(0.16,.83,.21,1);-moz-transition: all .6s cubic-bezier(0.16,.83,.21,1);transition: all .6s cubic-bezier(0.16,.83,.21,1);}
+.header a.close {position: absolute;display: block; width: 30px;height: 30px;background: url('../img/close_black.png');background-size: 30px;right: 55px;top: 105px;-webkit-transition: all .6s cubic-bezier(0.16,.83,.21,1);-moz-transition: all .6s cubic-bezier(0.16,.83,.21,1);transition: all .6s cubic-bezier(0.16,.83,.21,1);}
 .header a.close:hover {-webkit-transform: rotate(-90deg);-moz-transform: rotate(-90deg);-ms-transform: rotate(-90deg);-o-transform: rotate(-90deg);transform: rotate(-90deg);}
+
+#close {display: none;background: #282828;padding: 20px 0;text-decoration: none;color: #fff;text-transform: uppercase;font-size: 14px;-webkit-transition: all 0.2s ease-out;-moz-transition: all 0.2s ease-out;-o-transition: all 0.2s ease-out;-ms-transition: all 0.2s ease-out;}
+#close p {text-align: center;}
+
+#close i {position: absolute;right: 15px;top: 20px;display: block;width: 15px;height: 15px;background: url('../img/close2.png');background-size: 15px;}
 
 .header .nav{margin-bottom: 30px}
 .header .nav ul{max-width: 980px;width: 90%;margin: 0 auto;text-align: center;list-style: none;}
@@ -27,8 +33,8 @@ html,body{height: 100%; line-height: 1;font-family: 'Open Sans', Arial, sans-ser
 .apresentacao .container .mobile{text-align: left;padding: 0 0 0 130px;position: relative;z-index: 5;float: left;}
 .apresentacao .container .produto{float: right;padding: 0 120px 0 0;position: relative;}
 
-.separaca{height: 800px;padding: 0; background-repeat: no-repeat;background-attachment: fixed;background-size: cover;background-position: top center;}
-.separaca .overlay{position: absolute;width: 100%;height: 100%;background: #26292E;opacity: 0.7;filter: alpha(opacity=70);z-index: 0;}
+.separador{height: 800px;padding: 0; background-repeat: no-repeat;background-attachment: fixed;background-size: cover;background-position: top center;}
+.separador .overlay{position: absolute;width: 100%;height: 100%;background: #26292E;opacity: 0.7;filter: alpha(opacity=70);z-index: 0;}
 .apresentacao .container .desktop{float: right; text-align: left; margin: 160px 0 0 0}
 .apresentacao .container .descricao{float: left; width: 40%; margin: 250px 0 0 0}
 .apresentacao .container .descricao h2{font-weight: bold; font-size: 50px;}
@@ -69,22 +75,52 @@ html,body{height: 100%; line-height: 1;font-family: 'Open Sans', Arial, sans-ser
 
 /*---------------------------------------*/
 
+/* Largura mínima de 1200 pixels. TVs.*/
+@media screen and (max-width: 1200px){
+	.apresentacao .container {margin-top: -165px;}
+	.apresentacao .container .mobile{padding: 0 0 0 0px; width: 50%}
+	.apresentacao .container .mobile img{width: 48% }
+	.apresentacao .container .produto {padding: 0; position: absolute;right: 20px;z-index: 10;top: -120px; width: 50%;}
+	.apresentacao .container .produto img {width: 100%}
+	.apresentacao .container .desktop {width: 60%; margin: 270px 0 0 0}
+	.apresentacao .container .desktop img {width: 100%}
+	.apresentacao .container {padding-bottom: 110px;}
+	
+
+}
+/* Largura mínima de 992 pixels. Monitores.*/
+@media screen and (max-width: 1024px){
+	#close{display: block;}
+	.header a.close {display:none}
+}
 /* Largura mínima de 768 pixels. Tablets.*/
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
 	ul.nav li {display: inline-block; margin: 0 5px;}
 	.contentPage .projects .project{height: 225px;}
 	.contentPage .projects .project h3{margin: 40px 0 20px 0px;}
-	.contentPage .footer ul{margin: 15px 0 0 0;width: 100%;}
-}
-/* Largura mínima de 992 pixels. Monitores.*/
-@media screen and (max-width: 992px) {
+	.contentPage .footer ul{margin: 15px 0 0 0;width: 100%;}	.header .nav ul {margin: 0}
+	.header .nav ul li{margin-top: 30px;width: 25%; font-size: 10px;line-height: 14px;}
+	.agencia.staMonica{background-image: url('../img/stamonica-mobile.png');width: 30%;height: 22px;margin-top: -4px;}
+	
+	.trancher1{bottom: -1px;}
+ 
+	.apresentacao .container .mobile{padding: 0;position: relative;width: 100%;}
+	.apresentacao .container .mobile img{ width: 150px}
+	.apresentacao .container .mobile .iphone.G.L{right: 0;position: absolute;}
+	.apresentacao .container .mobile .iphone.G.R{left: : 0;position: absolute;}
+	.apresentacao .container .descricao{width: 100%}
+	.apresentacao .container .desktop{margin: 0; width: 100%}
+	.apresentacao .container .desktop img{ width: 100%}
+	.apresentacao .container .descricao {margin: 100px 0 0 0;}
 
-}
-/* Largura mínima de 1200 pixels. TVs.*/
-@media screen and (max-width: 1200px){
 
-}
-/* Largura mínima de 1200 pixels. TVs.*/
-@media screen and (min-width: 1200px){
+	.descricao .container{margin-top: -180px}
+	
+	.separador{display: none}
+	.produto{display: none}
 
+	
+	.contentPage .footer p{float: none;color: #a9a9a9;font-size: 10px;font-weight: 600;line-height: 40px; font: inherit;    padding: 0;}
+	
 }
+
