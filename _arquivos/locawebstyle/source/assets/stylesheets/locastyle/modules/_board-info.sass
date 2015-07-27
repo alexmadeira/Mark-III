@@ -1,0 +1,120 @@
+///
+/// Dashboard info
+///
+
+.ls-board-box
+
+  .ls-no-data
+    text-align: center
+    font-size: remtopx(1.125)
+    font-weight: 400
+    color: $gray3
+    padding: 45px 0 50px
+    margin: 0
+
+  .ls-box
+    @extend .ls-box-gray
+    @extend .ls-txt-center
+    border: none
+    background-color: #f8f8f8
+    margin-bottom: 10px
+    min-height: 90px
+    padding: 15px
+    border-radius: $default-radius
+
+    small
+      margin-bottom: 10px
+      display: block
+      font-size: remtopx(.75)
+
+    strong
+      display: block
+      font-size: remtopx(2.5)
+      margin-bottom: 10px
+      color: $gray5
+
+      small
+        font-size: remtopx(.875)
+
+  .ls-title-4
+    text-transform: uppercase
+    color: $gray3
+    font-weight: 400
+    font-size: remtopx(.875)
+    margin-bottom: 8px
+
+.ls-board-data
+  display: block
+
+  & + [class*="ls-btn"]
+    margin-bottom: 15px
+
+.ls-info-header
+  @extend .ls-clearfix
+  margin-bottom: 10px
+
+  > [class*="col-md"]:first-child
+    padding-left: 0
+
+  > [class*="ls-ico"]
+
+    small
+      display: block
+      color: $gray3
+      font-size: remtopx(.875)
+      margin-top: 3px
+
+    &:before
+      @extend .ls-float-left
+      margin-right: 5px
+      margin-bottom: 7px
+
+  [class*="ls-btn"]
+
+    ~ .ls-dropdown,
+    ~ [class*="ls-btn"]
+      margin-left: 0
+      margin-right: 0
+
+  .ls-actions-btn
+    border-top: none
+    padding: 0
+    margin: 20px 0 0
+
+//
+// Tablet and bigger
+//
+@media screen and (min-width: $screen-sm)
+  .ls-board-box
+    margin-bottom: 0
+    min-height: 170px
+
+    .row > [class*="col-"]
+      display: table
+      height: 160px
+      table-layout: fixed
+
+      .ls-box
+        display: table-cell
+        vertical-align: middle
+        min-height: 160px
+
+  .ls-info-header
+
+    .ls-actions-btn
+      margin: 0
+
+    [class*="ls-btn"]
+
+      ~ .ls-dropdown,
+      ~ [class*="ls-btn"]
+        margin-left: 5px
+        margin-right: 5px
+
+//
+// DESKTOP
+//
+@media screen and (max-width: $screen-lg)
+  .ls-board-box .ls-box strong
+    display: block
+    font-size: remtopx(2)
