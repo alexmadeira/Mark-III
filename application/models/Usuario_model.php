@@ -16,14 +16,11 @@
 
 		$this->usuario_nome   		= ($this->CI->session->userdata('usuario_nome'))? $this->CI->session->userdata('usuario_nome')				: '';
 		$this->usuario_email  		= ($this->CI->session->userdata('usuario_email'))? $this->CI->session->userdata('usuario_email')			: '';
-		$this->usuario_master 		= ($this->CI->session->userdata('usuario_master'))? $this->CI->session->userdata('usuario_master')			: 0;
 		$this->usuario_id     		= ($this->CI->session->userdata('usuario_id'))? $this->CI->session->userdata('usuario_id')					: '';
-		$this->usuario_permissoes   = ($this->CI->session->userdata('usuario_permissoes'))? $this->CI->session->userdata('usuario_permissoes')  : '';
     }
 
-    public function getUsuarioLogado($dados = array('usuario_nome','usuario_email','usuario_id','usuario_permissoes')){
+    public function getUsuarioLogado($dados = array('usuario_nome','usuario_email','usuario_id')){
     	$return = array();
-		$return['usuario_pattern'] = $this->getUsuarioPattern();
 		if(is_array($dados)){
 	    	foreach ($dados as $dado) {
 	    		$return[$dado] = $this->$dado;
@@ -34,7 +31,7 @@
 		return $return;
 	}
 	
-    public function getUsuarios($where=array("usuario_status"=>1,"usuario_master"=>0),$like=NULL,$limit=NULL,$notAtual=true){
+    public function getUsuarios($where=array("usuario_status"=>1),$like=NULL,$limit=NULL,$notAtual=true){
     	
     	if($notAtual){
     		$this->db->where_not_in("usuario_id",$this->usuario_id);
@@ -68,9 +65,6 @@
 
 		$return = $this->db->get("trooper_usuarios");
 		$dados = $return->result();
-		foreach ($dados as $key => $value) {
-			$dados[$key]->permissoes = $this->getPermissoesUsuario($dados[$key]->usuario_id);
-		}
 		$return->result = $dados;
 		return $return;
 	}
@@ -91,24 +85,11 @@
 		return $update;
     }
 	
-	public function getPatterns($where=NULL){
-		if($where){$this->db->where($where);}
-		$return = $this->db->get("trooper_patterns");
-		return $return;
-    }
-	
-	public function getUsuarioPattern(){
-		$usuario = $this->getUsuarios(array("usuario_id"=>$this->usuario_id),'','',false)->row();
-		$pattern = $this->getPatterns(array("pattern_id"=>$usuario->usuario_pattern_id))->row();
-		return $pattern;
-	}
-
 	private function refreshUsuario(){
 		$usuario = $this->getUsuarios(array("usuario_id"=>$this->usuario_id),'','',false)->row();
 
 		$this->CI->session->set_userdata('usuario_nome',$usuario->usuario_nome);
 		$this->CI->session->set_userdata('usuario_email',$usuario->usuario_email);
-		$this->CI->session->set_userdata('usuario_master',$usuario->usuario_master);
 		$this->CI->session->set_userdata('usuario_id',$usuario->usuario_id);
 	}
 	

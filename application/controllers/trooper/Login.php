@@ -4,10 +4,10 @@ class Login extends CI_Controller {
         parent::__construct();
 	    $this->load->model("Login_model","MDLogin");
 	    $this->load->library("Senha");
-	     if($this->MDLogin->isLogado()){redirect(site_url('trooper'), 'refresh');}
     }
 
 	public function index(){
+	    if($this->MDLogin->isLogado()){redirect(site_url('trooper'), 'refresh');}
 		$this->load->view('trooper/login');
 	}
 
@@ -25,6 +25,7 @@ class Login extends CI_Controller {
 		
 		$usuario = $this->MDLogin->get($data);		
 		
+		print_r($usuario->num_rows());
 		if($usuario->num_rows()>=1){
 			$this->MDLogin->logar($usuario->row());
 			redirect('trooper/', 'refresh');

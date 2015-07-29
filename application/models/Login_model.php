@@ -30,7 +30,7 @@
 		$this->CI->session->unset_userdata('usuario_email');
 		$this->CI->session->unset_userdata('usuario_id');
 		$this->CI->session->unset_userdata('erro');
-				
+					
 		$this->CI->session->set_userdata('usuario_nome', $usuario->usuario_nome);
 		$this->CI->session->set_userdata('usuario_email', $usuario->usuario_email);
 		$this->CI->session->set_userdata('usuario_id', $usuario->usuario_id); 
