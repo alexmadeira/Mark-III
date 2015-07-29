@@ -1,7 +1,7 @@
 <?php $this->load->view('trooper/include/_header')?>
 	<main class="ls-main ">
 	  <div class="container-fluid">
-	    <h1 class="ls-title-intro ls-ico-book">Configurações do site</h1>
+	    <h1 class="ls-title-intro ls-ico-domain">Configurações do site</h1>
 		<form action="" class="ls-form ls-form-vertical row" name="site">
 		  <fieldset>
 		    <label class="ls-label col-md-12 col-xs-12">

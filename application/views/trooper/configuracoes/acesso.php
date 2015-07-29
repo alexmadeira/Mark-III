@@ -1,7 +1,7 @@
 <?php $this->load->view('trooper/include/_header')?>
 	<main class="ls-main ">
 		<div class="container-fluid">
-			<h1 class="ls-title-intro ls-ico-book">Dados de Acesso</h1>
+			<h1 class="ls-title-intro ls-ico-users">Dados de Acesso</h1>
 			<form action="<?=site_url('trooper/action_configuracao/updateUser');?>" class="ls-form ls-form-inline" name="usuario" method="POST">
 			  <label class="ls-label col-md-5">
 			    <b class="ls-label-text">Nome</b>
