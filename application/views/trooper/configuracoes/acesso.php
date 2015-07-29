@@ -2,14 +2,14 @@
 	<main class="ls-main ">
 		<div class="container-fluid">
 			<h1 class="ls-title-intro ls-ico-book">Dados de Acesso</h1>
-			<form action="" class="ls-form ls-form-inline" name="usuario">
+			<form action="<?=site_url('trooper/action_configuracao/updateUser');?>" class="ls-form ls-form-inline" name="usuario" method="POST">
 			  <label class="ls-label col-md-5">
 			    <b class="ls-label-text">Nome</b>
-			    <input type="text" name="usuario_nome" placeholder="Nome e sobrenome" required >
+			    <input type="text" name="usuario_nome" placeholder="<?=$this->session->userdata('usuario_nome');?>" required  >
 			  </label>
 			  <label class="ls-label col-md-4">
 			    <b class="ls-label-text">E-mail</b>
-			    <input type="email" name="usuario_email" placeholder="Escreva seu email" required >
+			    <input type="email" name="usuario_email" placeholder="<?=$this->session->userdata('usuario_email');?>" required >
 			  </label>
 			  <div class="ls-actions-btn">
 			    <button class="ls-btn" type="submit">Salvar</button>
@@ -17,7 +17,7 @@
 			  </div>
 			</form>
 			<br>
-			<form action="" class="ls-form ls-form-inline" name="senha">
+			<form action="<?=site_url('trooper/action_configuracao/updateUser');?>" class="ls-form ls-form-inline" name="senha">
 				<label class="ls-label col-md-5">
 					<b class="ls-label-text">Senha</b>
 	    			<input type="password" maxlength="20" id="senha_senha" name="senha_senha" value="********" >

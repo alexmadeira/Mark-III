@@ -31,13 +31,12 @@
         <!-- User details -->
         <div data-ls-module="dropdown" class="ls-dropdown ls-user-account">
           <a href="#" class="ls-ico-user">
-            Zoe Palmer
-            <small>(lstyle)</small>
+           <?=$this->session->userdata('usuario_nome');?>
           </a>
           <nav class="ls-dropdown-nav ls-user-menu">
             <ul>
               <li><a href="<?=site_url('trooper/configuracao/acesso')?>">Conta</a></li>
-              <li><a href="<?=site_url('trooper/action_login/logoff')?>">Sair</a></li>
+              <li><a href="<?=site_url('trooper/login/logoff')?>">Sair</a></li>
             </ul>
           </nav>
         </div>

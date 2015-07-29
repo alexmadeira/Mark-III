@@ -11,22 +11,21 @@
   <link href="http://assets.locaweb.com.br/locastyle/3.7.4/stylesheets/locastyle.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
   <div class="ls-login-parent">
     <div class="ls-login-inner">
       <div class="ls-login-container">
         <div class="ls-login-box">
           <h1 class="ls-login-logo"><img title="Logo login" src="<?=base_url('trooper_files/img/trooper-logo.png')?>" /></h1>
-          <form role="form" class="ls-form ls-login-form" action="#">
+          <form role="form" class="ls-form ls-login-form" action="<?=site_url('trooper/login/logar')?>" name="login" method="POST">
             <fieldset>
               <label class="ls-label">
                 <b class="ls-label-text ls-hidden-accessible">Usuário</b>
-                <input class="ls-login-bg-user ls-field-lg" type="text" placeholder="Usuário" required autofocus>
+                <input class="ls-login-bg-user ls-field-lg" type="text" placeholder="Usuário" name="login_usuario" required autofocus>
               </label>
               <label class="ls-label">
                 <b class="ls-label-text ls-hidden-accessible">Senha</b>
                 <div class="ls-prefix-group">
-                  <input id="password_field" class="ls-login-bg-password ls-field-lg" type="password" placeholder="Senha" required>
+                  <input id="password_field" class="ls-login-bg-password ls-field-lg" type="password" placeholder="Senha" name="login_senha" required>
                   <a class="ls-label-text-prefix ls-toggle-pass ls-ico-eye" data-toggle-class="ls-ico-eye, ls-ico-eye-blocked" data-target="#password_field" href="#"></a>
                 </div>
               </label>
