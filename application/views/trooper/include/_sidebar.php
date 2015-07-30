@@ -28,6 +28,9 @@
 				<li><a href="<?=site_url('trooper/projetos/novo')?>" class="ls-submenu-item ls-ico-plus" role="menuitem">Novo Projeto</a></li>
 			</ul>
 		</li>
+		<li>
+			<a href="<?=site_url('trooper/imagens')?>" class="ls-ico-images">Imagens</a>
+		</li>
 		<?php if($sessao == 'configuracoes'){?>
 			<li class="ls-submenu-parent ls-active" aria-expanded="true" aria-hidden="false">
 		<?}else{?>

@@ -14,11 +14,16 @@
     <!-- We recommended use jQuery 1.10 or up -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
     <script src="http://assets.locaweb.com.br/locastyle/3.7.4/javascripts/locastyle.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.min.js"></script>
     <script src="<?=base_url('trooper_files/js/dropzone.js')?>"></script>
     <script type="text/javascript">
         $(function(){
             $("#dropzone").dropzone();
         })
+        $('.grid').masonry({
+            // options
+            itemSelector: '.grid-item',
+        });
     </script>
   </body>
 </html>
