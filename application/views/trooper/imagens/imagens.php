@@ -14,32 +14,27 @@
 		</div>
 		<div class="ls-box ls-lg-space">
 			<div class="row grid">
-				<?php for ($i=0; $i <5 ; $i++) {?>
-				<div class="col-sm-6 col-md-3 grid-item">
-					<div class="ls-box">
-						<img src="<?=base_url('public/upload/alex-madeira-game-7-bg.jpg')?>"  alt="[NOME]" title="[NOME]"/>
-						<p>[NOME]</p>
-						<a href="#" aria-label="Mudar o Plano de Revenda" class="ls-btn-danger ls-btn-lg ls-btn-block" title="Mudar o Plano de Revenda">Deletar</a>
+				<?php foreach ($arquivos->result() as $arquivo) {?>
+					<div class="col-sm-6 col-md-3 grid-item">
+						<div class="ls-box">
+							<img src="<?=base_url('public/upload/'. $arquivo->arquivo_arquivo)?>"  alt="<?=$arquivo->arquivo_nome?>" title="<?=$arquivo->arquivo_nome?>" class="thumbnail" />
+							<p class="titulo"><?=imagemNameConvert($arquivo->arquivo_nome)?></p>
+							<a href="#" aria-label="Deletar Imagem" class="ls-btn-danger ls-btn-lg ls-btn-block" title="Deletar Imagem" data-id="<?=$arquivo->arquivo_id?>">Deletar</a>
+							</div>
 					</div>
-				</div>
-				<div class="col-sm-6 col-md-3 grid-item">
-					<div class="ls-box">
-						<img src="<?=base_url('public/upload/alex-madeira-bg-game7-day-7.jpg')?>"  alt="[NOME]" title="[NOME]"/>
-						<p>[NOME]</p>
-						<a href="#" aria-label="Mudar o Plano de Revenda" class="ls-btn-danger ls-btn-lg ls-btn-block" title="Mudar o Plano de Revenda">Deletar</a>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3 grid-item">
-					<div class="ls-box">
-						<img src="<?=base_url('public/upload/alex-madeira-game7-desktop.png')?>"  alt="[NOME]" title="[NOME]"/>
-						<p>[NOME]</p>
-						<a href="#" aria-label="Mudar o Plano de Revenda" class="ls-btn-danger ls-btn-lg ls-btn-block" title="Mudar o Plano de Revenda">Deletar</a>
-					</div>
-				</div>
 				<?php }?>
 			</div>
 		</div>
 	  </div>
-	<?php $this->load->view('trooper/include/copyright')?>
+	  <?php $this->load->view('trooper/include/copyright')?>
 	</main>
+<div class="hidden">
+<div class="grid-item-modelo col-sm-6 col-md-3">
+	<div class="ls-box">
+		<img src=""  alt="" title="" class="thumbnail" />
+		<p class="titulo"></p>
+		<a href="#" aria-label="Deletar Imagem" class="ls-btn-danger ls-btn-lg ls-btn-block" title="Deletar Imagem" data-id="<?=$arquivo->arquivo_id?>">Deletar</a>
+	</div>
+</div>
+</div>
 <?php $this->load->view('trooper/include/_footer')?>

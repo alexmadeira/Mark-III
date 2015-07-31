@@ -157,14 +157,21 @@ function debug($dado,$stop=false){
 	}
 
 function fix_number($numero,$fix=5,$role='0'){
-		$total_numero = strlen($numero);
-		if($total_numero<$fix){
-			$espaco = $fix - $total_numero;
-			$role_contet = '';
-			for($i=0; $i<$espaco; $i++){
-				$role_contet.=$role;
-			}
-			$numero = $role_contet.$numero;
+	$total_numero = strlen($numero);
+	if($total_numero<$fix){
+		$espaco = $fix - $total_numero;
+		$role_contet = '';
+		for($i=0; $i<$espaco; $i++){
+			$role_contet.=$role;
 		}
-		return $numero;
+		$numero = $role_contet.$numero;
 	}
+	return $numero;
+}
+
+function imagemNameConvert($nome){
+	$nome = substr($nome,0,-4);
+	$nome = str_replace('-'," ",$nome);
+	$nome = str_replace("_"," ",$nome);
+	return $nome;
+}

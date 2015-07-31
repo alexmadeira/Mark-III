@@ -11,6 +11,7 @@
     <link href="<?=base_url('trooper_files/css/extend.css')?>" rel="stylesheet" type="text/css">
     <link rel="icon" sizes="192x192" href="<?=base_url('trooper_files/img/trooper-icon.ico')?>">
     <link rel="apple-touch-icon" href="<?=base_url('trooper_files/img/trooper-icon.ico')?>">
+    <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
  	<!--[if lt IE 9]>
 		<script type="text/javascript" src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<script type="text/javascript" src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>

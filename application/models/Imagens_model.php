@@ -9,7 +9,8 @@
     }
     public function get($where=null){
     	if($where){$this->db->where($where);}
-    	$imagens = $this->db->get("akkedis_imagens");
+    	$this->db->order_by("arquivo_id", "desc"); 
+    	$imagens = $this->db->get("trooper_arquivos");
     	return $imagens;
 	}
     public function marcaDagua($config = null){
@@ -37,7 +38,7 @@
 	
 	public function geraMiniaturaImagem($imagem){
 			
-			$tamanhos = $this->db->get("akkedis_tamanhos_imagens");
+			$tamanhos = $this->db->get("trooper_tamanhos_imagens");
 
 			$imagem['new_folder'] = ($imagem['new_folder'])?$imagem['new_folder']:$imagem['folder'];
 
@@ -62,31 +63,13 @@
 
 	public function gravaImagemDB ($imagem){
 		if(is_array($imagem)){
-			$this->db->insert('akkedis_imagens', $imagem); 
+			$this->db->insert('trooper_arquivos', $imagem); 
 		}
 	}
 
 	public function updateImagem($imagem_id,$updateData){
-		$this->db->where('imagem_id', $imagem_id);
-		$update =  $this->db->update('akkedis_imagens', $updateData); 
+		$this->db->where('arquivo_id', $imagem_id);
+		$update =  $this->db->update('trooper_arquivos', $updateData); 
 		return $update;
     }
-
-	
-	public function getImagemByProdutoId($produto_id){
-		$imagens = $this->db->get_where("akkedis_imagens",array("imagem_produto_id"=>$produto_id));
-		return $imagens;
-	}
-	
-	public function deletaImagemProduto($imagem_id,$folder){
-		$imagem 	= $this->get(array("imagem_id"=>$imagem_id))->row();
-		$tamanhos 	= $this->db->get("akkedis_tamanhos_imagens");
-		
-		@unlink($folder.$imagem->imagem_nome);
-		foreach ($tamanhos->result() as $tamanho) {
-			@unlink($folder.$tamanho->tamanho_imagem_nome."_".$imagem->imagem_nome);
-		}
-
-		$this->db->delete('akkedis_imagens', array('imagem_id' => $imagem->imagem_id)); 
-	}
 }
