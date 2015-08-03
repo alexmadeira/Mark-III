@@ -1,9 +1,19 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Projeto extends CI_Controller {
-	public function index(){
+	
+	function __construct(){
+	    parent::__construct();
+	    $this->load->model("Projetos_model","MDProjetos");
+	}
 
-	    $data['pagina'] = 'projeto';
+	public function index($projeto=null){
+
+		$projeto = $this->MDProjetos->getPrjeto(array(),array('projeto_slug' => $projeto));
+
+	    $data['projeto'] = $projeto->result[0];
+	    $data['pagina']  = 'projeto';
+
 		$this->load->view('projeto',$data);
 	}
 }

@@ -19,7 +19,7 @@
 						<div class="ls-box">
 							<img src="<?=base_url('public/upload/'. $arquivo->arquivo_arquivo)?>"  alt="<?=$arquivo->arquivo_nome?>" title="<?=$arquivo->arquivo_nome?>" class="thumbnail" />
 							<p class="titulo"><?=imagemNameConvert($arquivo->arquivo_nome)?></p>
-							<a href="#" aria-label="Deletar Imagem" class="ls-btn-danger ls-btn-lg ls-btn-block" title="Deletar Imagem" data-id="<?=$arquivo->arquivo_id?>">Deletar</a>
+							<a href="#" aria-label="Deletar Imagem" class="ls-btn-danger ls-btn-lg ls-btn-block deleteImage" title="Deletar Imagem" data-id="<?=$arquivo->arquivo_id?>">Deletar</a>
 							</div>
 					</div>
 				<?php }?>
@@ -33,7 +33,7 @@
 	<div class="ls-box">
 		<img src=""  alt="" title="" class="thumbnail" />
 		<p class="titulo"></p>
-		<a href="#" aria-label="Deletar Imagem" class="ls-btn-danger ls-btn-lg ls-btn-block" title="Deletar Imagem" data-id="<?=$arquivo->arquivo_id?>">Deletar</a>
+		<a href="#" aria-label="Deletar Imagem" class="ls-btn-danger ls-btn-lg ls-btn-block deleteImage" title="Deletar Imagem" data-id="">Deletar</a>
 	</div>
 </div>
 </div>

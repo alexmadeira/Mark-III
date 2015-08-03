@@ -21,55 +21,9 @@
     <script type="text/javascript">
         var base_url    = '<?=base_url();?>';
         var public_url  = base_url+'public/';
-        var $container; 
-        function reloadMasonry(){
-          $container.masonry('reloadItems');   
-          $container.masonry('layout');
-        }
-
-        $(function(){
-        var masonryOptions = {itemSelector: '.grid-item'};
-        // initialize Masonry
-        $container = $('.grid').masonry( masonryOptions );
-
-
-            
-            // This example uses jQuery so it creates the Dropzone, only when the DOM has
-            // loaded.
-
-            // Disabling autoDiscover, otherwise Dropzone will try to attach twice.
-            Dropzone.autoDiscover = false;
-            // or disable for specific dropzone:
-            // Dropzone.options.myDropzone = false;
-
-            $(function() {
-              // Now that the DOM is fully loaded, create the dropzone, and setup the
-              // event listeners
-              var myDropzone = new Dropzone(".dropzone");
-              myDropzone.on("success", function(data) {
-                
-                arquivo = data.name;
-                nome = arquivo.substring(0,(arquivo.length -4));
-                nome = nome.replace(/_/g, ' ');
-                nome = nome.replace(/-/g, ' ');
-                grid = $('.grid');
-
-                element = $('.grid-item-modelo').clone();
-                element.removeClass('grid-item-modelo');
-                element.addClass('grid-item');
-
-                img = element.find('img.thumbnail');
-                titulo = element.find('p.titulo');
-
-                img.attr('src',public_url+'upload/'+arquivo);
-                titulo.html(nome);
-                grid.prepend(element);
-                setTimeout("reloadMasonry()",1000)
-              });
-            })
-        })
-  
-      
+        var $container;       
     </script>
+    <script src="<?=base_url('trooper_files/js/scripts.js')?>"></script>
+
   </body>
 </html>

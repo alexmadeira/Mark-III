@@ -6,7 +6,8 @@ class Action_projeto extends CI_Controller {
 	    parent::__construct();
 	    $this->load->model("Login_model","MDLogin");
 	    $this->load->model("Imagens_model","MDImagem");
-
+	    $this->load->model("Projetos_model","MDProjeto");
+	   
 	    if(!$this->MDLogin->isLogado()){redirect(site_url('trooper/login'), 'refresh');}
 	}
 	
@@ -14,6 +15,32 @@ class Action_projeto extends CI_Controller {
 		redirect(site_url('trooper'), 'refresh');
 	}
 	
+	public function gravaProjeto(){
+
+		$projeto['projeto_nome'] 		= $this->input->post('projeto_nome');
+		$projeto['projeto_slug'] 		= slug($this->input->post('projeto_nome'));
+		$projeto['projeto_categoria'] 	= $this->input->post('projeto_categoria');
+		$projeto['projeto_agencia'] 	= $this->input->post('projeto_agencia');
+		$projeto['projeto_tipo'] 		= $this->input->post('projeto_tipo');
+		$projeto['projeto_ano'] 		= $this->input->post('projeto_ano');
+		$projeto['projeto_descricao'] 	= $this->input->post('projeto_descricao');
+
+		if($this->input->post('projeto_logo')){$projeto['projeto_logo'] 									= $this->input->post('projeto_logo');}
+		if($this->input->post('projeto_background_principal')){$projeto['projeto_background_principal'] 	= $this->input->post('projeto_background_principal');}
+		if($this->input->post('projeto_preview')){$projeto['projeto_preview'] 								= $this->input->post('projeto_preview');}
+		if($this->input->post('projeto_mobile1')){$projeto['projeto_mobile1'] 								= $this->input->post('projeto_mobile1');}
+		if($this->input->post('projeto_mobile2')){$projeto['projeto_mobile2'] 								= $this->input->post('projeto_mobile2');}
+		if($this->input->post('projeto_produto')){$projeto['projeto_produto'] 								= $this->input->post('projeto_produto');}
+		if($this->input->post('projeto_background')){$projeto['projeto_background'] 						= $this->input->post('projeto_background');}
+		if($this->input->post('projeto_desktop')){$projeto['projeto_desktop'] 								= $this->input->post('projeto_desktop');}
+
+		$projetoStatus = $this->MDProjeto->insert($projeto);
+
+		if($projetoStatus[0]){
+			redirect('trooper/projetos/'.$projetoStatus[1], 'refresh');
+		}
+	}
+
 	public function imagen_upload(){
 		
 		$config['upload_path'] = './public/upload/';
