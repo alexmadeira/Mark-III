@@ -9,6 +9,8 @@ class Projeto extends CI_Controller {
 
 	public function index($projeto=null){
 
+		if(!$projeto){redirect('erro/404','refresh');}
+		
 		$projeto = $this->MDProjetos->getPrjeto(array(),array('projeto_slug' => $projeto));
 
 	    $data['projeto'] = $projeto->result[0];

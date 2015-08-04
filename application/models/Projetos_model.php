@@ -5,6 +5,9 @@
         parent::__construct();
 		$this->load->database();
 		$this->load->model("Imagens_model","MDImagens");
+		$this->load->model("Categorias_model","MDCategorias");
+		$this->load->model("Tipos_model","MDTipos");
+		$this->load->model("Agencias_model","MDAgencias");
 		$this->CI =& get_instance();
 
     }
@@ -68,6 +71,16 @@
 
 			$desktop = $this->MDImagens->get(array('arquivo_id'=>$dados[$key]->projeto_desktop));
 			$dados[$key]->projeto_desktop_img = $desktop->row();
+
+
+			$categoria = $this->MDCategorias->getCategorias(array('categoria_id'=>$dados[$key]->projeto_categoria));
+			$dados[$key]->projeto_categoria_nome = $categoria->row();
+
+			$tipo = $this->MDTipos->getTipos(array('tipo_id'=>$dados[$key]->projeto_tipo));
+			$dados[$key]->projeto_tipo_nome = $tipo->row();
+
+			$agencia = $this->MDAgencias->getAgencias(array('agencia_id'=>$dados[$key]->projeto_agencia));
+			$dados[$key]->projeto_agencia_nome = $agencia->row();
 		}		
 
 		$return->result = $dados;

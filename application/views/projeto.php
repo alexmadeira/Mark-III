@@ -1,93 +1,107 @@
 <!--
 
-Array
+stdClass Object
 (
-    [0] => stdClass Object
+    [projeto_id] => 9
+    [projeto_slug] => Game-7
+    [projeto_logo] => 248
+    [projeto_background_principal] => 250
+    [projeto_preview] => 251
+    [projeto_mobile1] => 245
+    [projeto_mobile2] => 247
+    [projeto_produto] => 249
+    [projeto_background] => 246
+    [projeto_desktop] => 244
+    [projeto_nome] => Game 7
+    [projeto_categoria] => 1
+    [projeto_tipo] => 1
+    [projeto_agencia] => 1
+    [projeto_ano] => 2015
+    [projeto_descricao] => teste
+    [projeto_logo_img] => stdClass Object
         (
-            [projeto_id] => 8
-            [projeto_slug] => game-7
-            [projeto_logo] => 241
-            [projeto_background_principal] => 242
-            [projeto_preview] => 243
-            [projeto_mobile1] => 238
-            [projeto_mobile2] => 239
-            [projeto_produto] => 240
-            [projeto_background] => 237
-            [projeto_desktop] => 236
-            [projeto_nome] => Game 7
-            [projeto_categoria] => 1
-            [projeto_tipo] => 1
-            [projeto_agencia] => 1
-            [projeto_ano] => 2015
-            [projeto_descricao] => --
-            [projeto_logo_img] => stdClass Object
-                (
-                    [arquivo_id] => 241
-                    [arquivo_nome] => lg game7
-                    [arquivo_tipo] => 1
-                    [arquivo_arquivo] => lg-game7.png
-                )
+            [arquivo_id] => 248
+            [arquivo_nome] => lg game7
+            [arquivo_tipo] => 1
+            [arquivo_arquivo] => lg-game7.png
+        )
 
-            [projeto_background_principal_img] => stdClass Object
-                (
-                    [arquivo_id] => 242
-                    [arquivo_nome] => alex madeira game 7 bg
-                    [arquivo_tipo] => 1
-                    [arquivo_arquivo] => alex-madeira-game-7-bg.jpg
-                )
+    [projeto_background_principal_img] => stdClass Object
+        (
+            [arquivo_id] => 250
+            [arquivo_nome] => alex madeira game 7 bg
+            [arquivo_tipo] => 1
+            [arquivo_arquivo] => alex-madeira-game-7-bg.jpg
+        )
 
-            [projeto_preview_img] => stdClass Object
-                (
-                    [arquivo_id] => 243
-                    [arquivo_nome] => alex madeira game 7 pre page
-                    [arquivo_tipo] => 1
-                    [arquivo_arquivo] => alex-madeira-game-7-pre-page.jpg
-                )
+    [projeto_preview_img] => stdClass Object
+        (
+            [arquivo_id] => 251
+            [arquivo_nome] => alex madeira game 7 pre page
+            [arquivo_tipo] => 1
+            [arquivo_arquivo] => alex-madeira-game-7-pre-page.jpg
+        )
 
-            [projeto_mobile1_img] => stdClass Object
-                (
-                    [arquivo_id] => 238
-                    [arquivo_nome] => alex madeira game7 mobile v1
-                    [arquivo_tipo] => 1
-                    [arquivo_arquivo] => alex-madeira-game7-mobile-v1.png
-                )
+    [projeto_mobile1_img] => stdClass Object
+        (
+            [arquivo_id] => 245
+            [arquivo_nome] => alex madeira game7 mobile v1
+            [arquivo_tipo] => 1
+            [arquivo_arquivo] => alex-madeira-game7-mobile-v1.png
+        )
 
-            [projeto_mobile2_img] => stdClass Object
-                (
-                    [arquivo_id] => 239
-                    [arquivo_nome] => alex madeira game7 mobile v2
-                    [arquivo_tipo] => 1
-                    [arquivo_arquivo] => alex-madeira-game7-mobile-v2.png
-                )
+    [projeto_mobile2_img] => stdClass Object
+        (
+            [arquivo_id] => 247
+            [arquivo_nome] => alex madeira game7 mobile v2
+            [arquivo_tipo] => 1
+            [arquivo_arquivo] => alex-madeira-game7-mobile-v2.png
+        )
 
-            [projeto_produto_img] => stdClass Object
-                (
-                    [arquivo_id] => 240
-                    [arquivo_nome] => alex madeira game7 produto fone
-                    [arquivo_tipo] => 1
-                    [arquivo_arquivo] => alex-madeira-game7-produto-fone.png
-                )
+    [projeto_produto_img] => stdClass Object
+        (
+            [arquivo_id] => 249
+            [arquivo_nome] => alex madeira game7 produto fone
+            [arquivo_tipo] => 1
+            [arquivo_arquivo] => alex-madeira-game7-produto-fone.png
+        )
 
-            [projeto_background_img] => stdClass Object
-                (
-                    [arquivo_id] => 237
-                    [arquivo_nome] => alex madeira bg game 7 day 7
-                    [arquivo_tipo] => 1
-                    [arquivo_arquivo] => alex-madeira-bg-game-7-day-7.jpg
-                )
+    [projeto_background_img] => stdClass Object
+        (
+            [arquivo_id] => 246
+            [arquivo_nome] => alex madeira bg game 7 day 7
+            [arquivo_tipo] => 1
+            [arquivo_arquivo] => alex-madeira-bg-game-7-day-7.jpg
+        )
 
-            [projeto_desktop_img] => stdClass Object
-                (
-                    [arquivo_id] => 236
-                    [arquivo_nome] => alex madeira game7 desktop
-                    [arquivo_tipo] => 1
-                    [arquivo_arquivo] => alex-madeira-game7-desktop.png
-                )
+    [projeto_desktop_img] => stdClass Object
+        (
+            [arquivo_id] => 244
+            [arquivo_nome] => alex madeira game7 desktop
+            [arquivo_tipo] => 1
+            [arquivo_arquivo] => alex-madeira-game7-desktop.png
+        )
 
+    [projeto_categoria_nome] => stdClass Object
+        (
+            [categoria_id] => 1
+            [categoria_nome] => Web
+        )
+
+    [projeto_tipo_nome] => stdClass Object
+        (
+            [tipo_id] => 1
+            [tipo_nome] => e-commerce
+        )
+
+    [projeto_agencianome] => stdClass Object
+        (
+            [agencia_id] => 1
+            [agencia_nome] => Sta Monica
+            [agencia_class] => staMonica
         )
 
 )
-	
 -->
 
 <?php $this->load->view('includes/_header');?>
@@ -99,19 +113,19 @@ Array
 				<ul>
 					<li>
 						<em>Categoria</em>
-						<p>Web</p>
+						<p><?=$projeto->projeto_categoria_nome->categoria_nome?></p>
 					</li>
 					<li>
 						<em>Projeto</em>
-						<p>E-Commerce</p>
+						<p><?=$projeto->projeto_tipo_nome->tipo_nome?></p>
 					</li>
 					<li>
 						<em>Agencia</em>
-						<p><a href="#" class="staMonica agencia">Sta Monica</a></p>
+						<p><a href="#" class="<?=$projeto->projeto_agencia_nome->agencia_class?> agencia"><?=$projeto->projeto_agencia_nome->agencia_nome?></a></p>
 					</li>
 					<li>
 						<em>Ano</em>
-						<p>2015</p>
+						<p><?=$projeto->projeto_ano?></p>
 					</li>
 				</ul>
 			</div>
@@ -126,28 +140,28 @@ Array
 	    	<div class="row apresentacao col-md-16">
 	    		<div class="container">
 	    			<div class="mobile">
-	    				<img src="<?=base_url('/public/upload/'.$projeto->projeto_mobile1_img->arquivo_arquivo)?>" alt="" title="" class="iphone G L" width="200">
-	    				<img src="<?=base_url('/public/upload/'.$projeto->projeto_mobile2_img->arquivo_arquivo)?>" alt="" title="" class="iphone M R" width="200">
+	    				<img src="<?=base_url('/public/upload/'.$projeto->projeto_mobile1_img->arquivo_arquivo)?>" alt="<?=$projeto->projeto_mobile1_img->arquivo_nome;?>" title="<?=$projeto->projeto_mobile1_img->arquivo_nome;?>" class="iphone G L" width="200">
+	    				<img src="<?=base_url('/public/upload/'.$projeto->projeto_mobile2_img->arquivo_arquivo)?>" alt="<?=$projeto->projeto_mobile2_img->arquivo_nome;?>" title="<?=$projeto->projeto_mobile2_img->arquivo_nome;?>" class="iphone M R" width="200">
 	    			</div>
 	    			<div class="produto">
-	    				<img src="<?=base_url('/public/upload/'.$projeto->projeto_produto_img->arquivo_arquivo)?>" alt="" title="" class="">
+	    				<img src="<?=base_url('/public/upload/'.$projeto->projeto_produto_img->arquivo_arquivo)?>" alt="<?=$projeto->projeto_produto_img->arquivo_nome;?>" title="<?=$projeto->projeto_produto_img->arquivo_nome;?>" class="">
 	    			</div>
 	    		</div>
 	    	</div>
 			<div class="row separador col-md-16" style="background-image: url('<?=base_url('/public/upload/'.$projeto->projeto_background_img->arquivo_arquivo)?>')">
-				<img src="<?=base_url('/public/img/tranche_bas2.png')?>" alt="" title="" class="trancher2" />
+				<img src="<?=base_url('/public/img/tranche_bas2.png')?>" alt="alex madeira separador" title="" class="trancher2" />
 				<div class="overlay"></div>
-				<img src="<?=base_url('/public/img/tranche_bas3.png')?>" alt="" title="" class="trancher3" />
+				<img src="<?=base_url('/public/img/tranche_bas3.png')?>" alt="alex madeira separador " title="" class="trancher3" />
 			</div>
 	    	<div class="row apresentacao descricao col-md-16">
 	    		<div class="container">
 	    			<div class="descricao">
-		    			<h2>Vidis litro abertis</h2>
+		    			<h2>O projeto <?=$projeto->projeto_nome?></h2>
 		    			<hr>
-		    			<p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+		    			<p><?=$projeto->projeto_descricao?></p>
 	    			</div>
 	    			<div class="desktop">
-	    				<img src="<?=base_url('/public/upload/'.$projeto->projeto_desktop_img->arquivo_arquivo)?>" alt="" title="" class="iMac G L" width="600">
+	    				<img src="<?=base_url('/public/upload/'.$projeto->projeto_desktop_img->arquivo_arquivo)?>" alt="<?=$projeto->projeto_desktop_img->arquivo_nome;?>" title="<?=$projeto->projeto_desktop_img->arquivo_nome;?>" class="iMac G L" width="600">
 	    			</div>
 		    	</div>
 	    	</div>
