@@ -3,3 +3,6 @@ h1.ls-brand-name a.ls-ico-earth:before{content: "";background-image: url(../img/
 .ls-box form .dz-message{float: left;width: 100%;height: 100%;}
 .grid-item{padding: 7px}
 .hidden{display: none;}
+
+
+.projeto .imagemPosicao img{  max-height: 300px;}
