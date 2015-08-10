@@ -25,10 +25,7 @@ function dropzone(){
 			img.attr('src',public_url+'upload/'+arquivo);
 			titulo.html(nome);
 			grid.prepend(element);
-			setTimeout("reloadMasonry()",1000)
 		});
-	}else{
-		setTimeout("reloadMasonry()",1000)
 	}
 }
 $(function(){
@@ -37,9 +34,10 @@ $(function(){
    
 	dropzone();
     
+	setInterval("reloadMasonry()",1000);
+
     var posicao = 0;
     $('.projeto *[data-ls-module="modal"]').click(function(){
-       setTimeout("reloadMasonry()",1000);
        posicao = $(this).data('posicao');
     });
 	
@@ -62,6 +60,7 @@ $(function(){
 		el.fadeOut(function(){
 			el.html('<img src="'+imagem_src+'"/>');
 			el.fadeIn();
+			locastyle.modal.close()
 		})
 	})
 

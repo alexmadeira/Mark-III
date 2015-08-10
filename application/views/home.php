@@ -27,42 +27,15 @@
 				</div>
 	    	</div>
 	    	<div class="row projects" id="projects">
-	    		<div class="col-md-8 project" data-sr='move 0px'>
-	    		  	<a href="<?=site_url('projeto')?>" class="transition all"></a>
-	    			<img src="<?=base_url('public/upload/alex-madeira-game-7-pre-page.jpg')?>"  alt=""  title="" />
-	    			<h3>Os melhores <span>equipamentos</span> Gamers.</h3>
-	    			<a href="<?=site_url('projeto')?>" class="viewMore transition">Explore Game 7 <i class="fa fa-long-arrow-right fa-lg"></i></a>
-	    		</div>
-	    		<div class="col-md-8 project" data-sr='move 0px'>
-	    		  	<a href="<?=site_url('projeto')?>" class="transition all"></a>
-	    			<img src="<?=base_url('public/img/cover_cinemap.jpg')?>"  alt=""  title="" />
-	    			<h3>Mussum ipsum <span>cacilds, vidis</span> litro.</h3>
-	    			<a  ahref="<?=site_url('projeto')?>" class="viewMore transition">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
-	    		</div>
-	    		<div class="col-md-16 project" data-sr='move 0px'>
-	    		  	<a href="<?=site_url('projeto')?>" class="transition all"></a>
-	    			<img src="<?=base_url('public/img/cover_cinemap.jpg')?>"  alt=""  title="" />
-	    			<h3>Mussum ipsum <span>cacilds, vidis</span> litro.</h3>
-	    			<a ahref="<?=site_url('projeto')?>" class="viewMore transition">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
-	    		</div>
-	    		<div class="col-md-8 project" data-sr='move 0px'>
-	    		  	<a href="<?=site_url('projeto')?>" class="transition all"></a>
-	    			<img src="<?=base_url('public/img/cover_cinemap.jpg')?>"  alt=""  title="" />
-	    			<h3>Mussum ipsum <span>cacilds, vidis</span> litro.</h3>
-	    			<a a href="<?=site_url('projeto')?>" class="viewMore transition">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
-	    		</div>
-	    		<div class="col-md-8 project" data-sr='move 0px'>
-	    		  	<a href="<?=site_url('projeto')?>" class="transition all"></a>
-	    			<img src="<?=base_url('public/img/cover_cinemap.jpg')?>"  alt=""  title="" />
-	    			<h3>Mussum ipsum <span>cacilds, vidis</span> litro.</h3>
-	    			<a  ahref="<?=site_url('projeto')?>" class="viewMore transition">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
-	    		</div>
-	    		<div class="col-md-16 project" data-sr='move 0px'>
-	    		  	<a href="<?=site_url('projeto')?>" class="transition all"></a>
-	    			<img src="<?=base_url('public/img/cover_cinemap.jpg')?>"  alt=""  title="" />
-	    			<h3>Mussum ipsum <span>cacilds, vidis</span> litro.</h3>
-	    			<a a href="<?=site_url('projeto')?>" class="viewMore transition">Mussum ipsum cacilds <i class="fa fa-long-arrow-right fa-lg"></i></a>
-	    		</div>
+	    		<?php $i=1;?>
+				<?php foreach ($projetos->result() as $projeto) {?>
+					<div class="col-md-<?=($i%3==0)?16:8?> project" data-sr='move 0px'>
+		    		  	<a href="<?=site_url('projeto')?>" class="transition all"></a>
+		    			<img src="<?=base_url('/public/upload/'.$projeto->projeto_preview_img->arquivo_arquivo)?>"  alt="<?=$projeto->produto_nome?>"  title="<?=$projeto->produto_nome?>" />
+		    			<h3><?=$projeto->produto_slogan?></h3>
+		    			<a href="<?=site_url('projeto')?>" class="viewMore transition">Explore Game 7 <i class="fa fa-long-arrow-right fa-lg"></i></a>
+		    		</div>
+				<?php }?>
 	    	</div>
 	    	<div class="row contact" id="contact">
 				<div class="container">

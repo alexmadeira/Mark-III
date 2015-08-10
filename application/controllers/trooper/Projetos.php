@@ -28,15 +28,23 @@ class Projetos extends CI_Controller {
 		$data['sessao'] 	= 'projetos';
 		$data['sidebar_projeto'] = $this->MDProjetos->getPrjeto();
 
-		$this->load->view('trooper/projetos/novo',$data);
+		$this->load->view('trooper/projetos/projeto',$data);
 	}
 	public function projeto($projeto_id){
+		
+		$projeto = $this->MDProjetos->getPrjeto(array('projeto_id'=>$projeto_id))->result();
 	
-		$data['agencias'] 	= $this->MDAgencias->getAgencias();
-		$data['categorias'] = $this->MDCategoria->getCategorias();
-		$data['arquivos'] 	= $this->MDImagem->get();
+		$data['agencias'] 		= $this->MDAgencias->getAgencias();
+		$data['categorias'] 	= $this->MDCategoria->getCategorias();
+		$data['tipos'] 			= $this->MDTipos->getTipos();
+		$data['arquivos'] 		= $this->MDImagem->get();
+		$data['arquivos'] 		= $this->MDImagem->get();
+		$data['projeto'] 		= $projeto[0];
+		$data['projeto_nome'] 	= $projeto[0]->projeto_nome;
+
 		$data['sidebar_projeto'] = $this->MDProjetos->getPrjeto();
-		$data['sessao'] = 'projetos';
+		
+		$data['sessao'] 	= 'projetos';
 	
 		$this->load->view('trooper/projetos/projeto',$data);
 	}

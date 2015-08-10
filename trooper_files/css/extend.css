@@ -1,7 +1,8 @@
 h1.ls-brand-name a.ls-ico-earth:before{content: "";background-image: url(../img/trooper-icon.ico);height: 66%;width: 25%;background-size: 100%;}
 .ls-box form{float: left;width: 100%;height: 100%;}
 .ls-box form .dz-message{float: left;width: 100%;height: 100%;}
-.grid-item{padding: 7px}
+.grid-item{padding: 7px;width: 24.3%; }
+
 .hidden{display: none;}
 
 

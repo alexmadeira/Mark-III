@@ -18,6 +18,7 @@ class Action_projeto extends CI_Controller {
 	public function gravaProjeto(){
 
 		$projeto['projeto_nome'] 		= $this->input->post('projeto_nome');
+		$projeto['projeto_slogan'] 		= $this->input->post('projeto_slogan');
 		$projeto['projeto_slug'] 		= slug($this->input->post('projeto_nome'));
 		$projeto['projeto_categoria'] 	= $this->input->post('projeto_categoria');
 		$projeto['projeto_agencia'] 	= $this->input->post('projeto_agencia');

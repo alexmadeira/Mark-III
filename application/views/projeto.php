@@ -1,109 +1,3 @@
-<!--
-
-stdClass Object
-(
-    [projeto_id] => 9
-    [projeto_slug] => Game-7
-    [projeto_logo] => 248
-    [projeto_background_principal] => 250
-    [projeto_preview] => 251
-    [projeto_mobile1] => 245
-    [projeto_mobile2] => 247
-    [projeto_produto] => 249
-    [projeto_background] => 246
-    [projeto_desktop] => 244
-    [projeto_nome] => Game 7
-    [projeto_categoria] => 1
-    [projeto_tipo] => 1
-    [projeto_agencia] => 1
-    [projeto_ano] => 2015
-    [projeto_descricao] => teste
-    [projeto_logo_img] => stdClass Object
-        (
-            [arquivo_id] => 248
-            [arquivo_nome] => lg game7
-            [arquivo_tipo] => 1
-            [arquivo_arquivo] => lg-game7.png
-        )
-
-    [projeto_background_principal_img] => stdClass Object
-        (
-            [arquivo_id] => 250
-            [arquivo_nome] => alex madeira game 7 bg
-            [arquivo_tipo] => 1
-            [arquivo_arquivo] => alex-madeira-game-7-bg.jpg
-        )
-
-    [projeto_preview_img] => stdClass Object
-        (
-            [arquivo_id] => 251
-            [arquivo_nome] => alex madeira game 7 pre page
-            [arquivo_tipo] => 1
-            [arquivo_arquivo] => alex-madeira-game-7-pre-page.jpg
-        )
-
-    [projeto_mobile1_img] => stdClass Object
-        (
-            [arquivo_id] => 245
-            [arquivo_nome] => alex madeira game7 mobile v1
-            [arquivo_tipo] => 1
-            [arquivo_arquivo] => alex-madeira-game7-mobile-v1.png
-        )
-
-    [projeto_mobile2_img] => stdClass Object
-        (
-            [arquivo_id] => 247
-            [arquivo_nome] => alex madeira game7 mobile v2
-            [arquivo_tipo] => 1
-            [arquivo_arquivo] => alex-madeira-game7-mobile-v2.png
-        )
-
-    [projeto_produto_img] => stdClass Object
-        (
-            [arquivo_id] => 249
-            [arquivo_nome] => alex madeira game7 produto fone
-            [arquivo_tipo] => 1
-            [arquivo_arquivo] => alex-madeira-game7-produto-fone.png
-        )
-
-    [projeto_background_img] => stdClass Object
-        (
-            [arquivo_id] => 246
-            [arquivo_nome] => alex madeira bg game 7 day 7
-            [arquivo_tipo] => 1
-            [arquivo_arquivo] => alex-madeira-bg-game-7-day-7.jpg
-        )
-
-    [projeto_desktop_img] => stdClass Object
-        (
-            [arquivo_id] => 244
-            [arquivo_nome] => alex madeira game7 desktop
-            [arquivo_tipo] => 1
-            [arquivo_arquivo] => alex-madeira-game7-desktop.png
-        )
-
-    [projeto_categoria_nome] => stdClass Object
-        (
-            [categoria_id] => 1
-            [categoria_nome] => Web
-        )
-
-    [projeto_tipo_nome] => stdClass Object
-        (
-            [tipo_id] => 1
-            [tipo_nome] => e-commerce
-        )
-
-    [projeto_agencianome] => stdClass Object
-        (
-            [agencia_id] => 1
-            [agencia_nome] => Sta Monica
-            [agencia_class] => staMonica
-        )
-
-)
--->
-
 <?php $this->load->view('includes/_header');?>
 	<div class="container-fluid main">
 		<a id="close" class="transition" href="<?=site_url('home')?>"title="Encerrar o projeto"><p>Encerrar o projeto</p><i></i></a>
@@ -132,7 +26,7 @@ stdClass Object
 			<a href="#" class="projetoLogo" style="background-image: url('<?=base_url('/public/upload/'.$projeto->projeto_logo_img->arquivo_arquivo)?>')"><?=$projeto->projeto_nome?></a>
 			<div class="project">
 				<h1><?=$projeto->projeto_nome?></h1>
-				<p>- Consetis adipiscings elitis. Pra lá -</p>
+				<p>- <?=$projeto->projeto_slogan?> -</p>
 			</div>
 			<img src="<?=base_url('/public/img/tranche_bas1.png')?>" alt="" title="" class="trancher1" />
     	</header>
