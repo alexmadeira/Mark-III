@@ -30,10 +30,10 @@
 	    		<?php $i=1;?>
 				<?php foreach ($projetos->result() as $projeto) {?>
 					<div class="col-md-<?=($i%3==0)?16:8?> project" data-sr='move 0px'>
-		    		  	<a href="<?=site_url('projeto')?>" class="transition all"></a>
-		    			<img src="<?=base_url('/public/upload/'.$projeto->projeto_preview_img->arquivo_arquivo)?>"  alt="<?=$projeto->produto_nome?>"  title="<?=$projeto->produto_nome?>" />
+		    		  	<a href="<?=site_url('projeto/'.$projeto->projeto_slug)?>" class="transition all"></a>
+		    			<img src="<?=base_url('/public/upload/'.$projeto->projeto_preview_img->arquivo_arquivo)?>"  alt="<?=$projeto->projeto_nome?>"  title="<?=$projeto->projeto_nome?>" />
 		    			<h3><?=$projeto->produto_slogan?></h3>
-		    			<a href="<?=site_url('projeto')?>" class="viewMore transition">Explore Game 7 <i class="fa fa-long-arrow-right fa-lg"></i></a>
+		    			<a href="<?=site_url('projeto/'.$projeto->projeto_slug)?>" class="viewMore transition">Explore <?=$projeto->projeto_nome?><i class="fa fa-long-arrow-right fa-lg"></i></a>
 		    		</div>
 				<?php }?>
 	    	</div>

@@ -1,9 +1,9 @@
 <?php $this->load->view('trooper/include/_header')?>
 	<main class="ls-main ">
 	  <div class="container-fluid projeto">
-	    <h1 class="ls-title-intro ls-ico-book">Novo Projeto</h1>
+	    <h1 class="ls-title-intro ls-ico-book"><?=$titulo?></h1>
 	    
-		<form action="<?=site_url('trooper/action_projeto/gravaProjeto')?>" class="ls-form ls-form-horizontal row" name="projeto" method="POST">
+		<form action="<?=$link?>" class="ls-form ls-form-horizontal row" name="projeto" method="POST">
 			<fieldset>
 				<label class="ls-label col-md-3 col-xs-3">
 				  <b class="ls-label-text">Nome</b>
@@ -22,7 +22,7 @@
 						<?php }?>
 					    </select>
 					</div>
-				</label>  
+				</label>
 				<label class="ls-label col-md-3 col-xs-3">
 				  	<b class="ls-label-text">Projeto</b>
 					<div class="ls-custom-select">
@@ -50,7 +50,7 @@
 				</label>
 				<label class="ls-label col-md-12 col-xs-12">
 				  	<b class="ls-label-text">Descrição</b>
-					<textarea data-ls-module="charCounter" maxlength="160" name="projeto_descricao"><?=$projeto->projeto_descricao?></textarea>
+					<textarea data-ls-module="charCounter" name="projeto_descricao"><?=$projeto->projeto_descricao?></textarea>
 				</label>
 
 				<input type="hidden" name="projeto_id" value="<?=$projeto->projeto_id?>" />
@@ -68,56 +68,72 @@
 				<div class="preview imagemPosicao col-sm-6 col-md-3 grid-item">
 					<div class="ls-box">
 						<h3 class="ls-title-3">Logo</h3>
-						<div class="imgBox"></div>
+						<div class="imgBox">
+							<img src="<?=base_url("public/upload/".$projeto->projeto_logo_img->arquivo_arquivo);?>" />
+						</div>
 						<a href="#" data-ls-module="modal" data-target="#insertImageModal" class="ls-btn-primary" data-posicao="1">Inseir Imagem</a>
 					</div>
 				</div>
 				<div class="preview imagemPosicao col-sm-6 col-md-3 grid-item">
 					<div class="ls-box">
 						<h3 class="ls-title-3">background 1</h3>
-						<div class="imgBox"></div>
+						<div class="imgBox">
+							<img src="<?=base_url("public/upload/".$projeto->projeto_background_principal_img->arquivo_arquivo);?>" />
+						</div>
 						<a href="#" data-ls-module="modal" data-target="#insertImageModal" class="ls-btn-primary" data-posicao="2">Inseir Imagem</a>
 					</div>
 				</div>
 				<div class="preview imagemPosicao col-sm-6 col-md-3 grid-item">
 					<div class="ls-box">
 						<h3 class="ls-title-3">preview</h3>
-						<div class="imgBox"></div>
+						<div class="imgBox">
+							<img src="<?=base_url("public/upload/".$projeto->projeto_preview_img->arquivo_arquivo);?>" />
+						</div>
 						<a href="#" data-ls-module="modal" data-target="#insertImageModal" class="ls-btn-primary"  data-posicao="3">Inseir Imagem</a>
 					</div>
 				</div>
 				<div class="preview imagemPosicao col-sm-6 col-md-3 grid-item">
 					<div class="ls-box">
 						<h3 class="ls-title-3">Mobile 1</h3>
-						<div class="imgBox"></div>
+						<div class="imgBox">
+							<img src="<?=base_url("public/upload/".$projeto->projeto_mobile1_img->arquivo_arquivo);?>" />
+						</div>
 						<a href="#" data-ls-module="modal" data-target="#insertImageModal" class="ls-btn-primary" data-posicao="4">Inseir Imagem</a>
 					</div>
 				</div>
 				<div class="preview imagemPosicao col-sm-6 col-md-3 grid-item">
 					<div class="ls-box">
 						<h3 class="ls-title-3">Mobile 2</h3>
-						<div class="imgBox"></div>
+						<div class="imgBox">
+							<img src="<?=base_url("public/upload/".$projeto->projeto_mobile2_img->arquivo_arquivo);?>" />
+						</div>
 						<a href="#" data-ls-module="modal" data-target="#insertImageModal" class="ls-btn-primary" data-posicao="5">Inseir Imagem</a>
 					</div>
 				</div>
 				<div class="preview imagemPosicao col-sm-6 col-md-3 grid-item">
 					<div class="ls-box">
 						<h3 class="ls-title-3">Produto</h3>
-						<div class="imgBox"></div>
+						<div class="imgBox">
+							<img src="<?=base_url("public/upload/".$projeto->projeto_produto_img->arquivo_arquivo);?>" />
+						</div>
 						<a href="#" data-ls-module="modal" data-target="#insertImageModal" class="ls-btn-primary" data-posicao="6">Inseir Imagem</a>
 					</div>
 				</div>
 				<div class="preview imagemPosicao col-sm-6 col-md-3 grid-item">
 					<div class="ls-box">
 						<h3 class="ls-title-3">background 2</h3>
-						<div class="imgBox"></div>
+						<div class="imgBox">
+							<img src="<?=base_url("public/upload/".$projeto->projeto_background_img->arquivo_arquivo);?>" />
+						</div>
 						<a href="#" data-ls-module="modal" data-target="#insertImageModal" class="ls-btn-primary" data-posicao="7">Inseir Imagem</a>
 					</div>
 				</div>
 				<div class="preview imagemPosicao col-sm-6 col-md-3 grid-item">
 					<div class="ls-box">
 						<h3 class="ls-title-3">Desktop</h3>
-						<div class="imgBox"></div>
+						<div class="imgBox">
+							<img src="<?=base_url("public/upload/".$projeto->projeto_desktop_img->arquivo_arquivo);?>" />
+						</div>
 						<a href="#" data-ls-module="modal" data-target="#insertImageModal" class="ls-btn-primary" data-posicao="8">Inseir Imagem</a>
 					</div>
 				</div>

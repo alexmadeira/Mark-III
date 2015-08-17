@@ -24,7 +24,7 @@ html,body{height: 100%; line-height: 1;font-family: 'Open Sans', Arial, sans-ser
 .dark .nav ul li{color: #fff}
 
 .header .project h1{color: #3d4543;font-size: 30px;font-weight: 700;max-width: 800px;width: 90%;margin: 0 auto;margin-top: 70px;text-align: center;line-height: 1.5em;}
-.header .project p{width: 90%;position: relative;font-style: italic;font-weight: 300;color: #a2a4a3;font-size: 23px;margin: 0 auto;margin-top: 10px;padding-bottom: 8%;text-align: center;z-index: 20;line-height: 1.5em;}
+.header .project p{width: 90%;position: relative;font-style: italic;font-weight: 300;color: #000;font-size: 23px;margin: 0 auto;margin-top: 10px;padding-bottom: 8%;text-align: center;z-index: 20;line-height: 1.5em;}
 
 .trancher1{width: 100%; position: absolute;bottom:0;left: 0;  z-index: 2;}
 .trancher2{width: 100%; position: absolute;top:0;left: 0;  z-index: 2;}

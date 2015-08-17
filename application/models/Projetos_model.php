@@ -18,6 +18,12 @@
 		return $insert;
     }
 
+    public function update($id,$projeto){
+		$this->db->where('projeto_id', $id);
+		$update = $this->db->update('trooper_projetos',$projeto); 
+		return $update;
+    }
+
     public function getPrjeto($where=array(),$like=NULL,$limit=NULL){
 		if($where){$this->db->where($where);}
 		if($like){

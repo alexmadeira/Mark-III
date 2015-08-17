@@ -26,6 +26,8 @@ class Projetos extends CI_Controller {
 		$data['tipos'] 		= $this->MDTipos->getTipos();
 		$data['arquivos'] 	= $this->MDImagem->get();
 		$data['sessao'] 	= 'projetos';
+		$data['titulo']		= 'Novo Projeto';
+		$data['link'] 		= site_url('trooper/action_projeto/gravaProjeto');
 		$data['sidebar_projeto'] = $this->MDProjetos->getPrjeto();
 
 		$this->load->view('trooper/projetos/projeto',$data);
@@ -40,7 +42,8 @@ class Projetos extends CI_Controller {
 		$data['arquivos'] 		= $this->MDImagem->get();
 		$data['arquivos'] 		= $this->MDImagem->get();
 		$data['projeto'] 		= $projeto[0];
-		$data['projeto_nome'] 	= $projeto[0]->projeto_nome;
+		$data['titulo']			= $projeto[0]->projeto_nome;
+		$data['link'] 			= site_url('trooper/action_projeto/updateProjeto');
 
 		$data['sidebar_projeto'] = $this->MDProjetos->getPrjeto();
 		
