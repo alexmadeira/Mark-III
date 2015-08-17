@@ -28,6 +28,15 @@ function dropzone(){
 		});
 	}
 }
+
+function deleteImage(){
+	$('.grid').delegate( ".deleteImage", "click", function() {
+ 		imagem_id = $(this).data('id');
+ 		$.post(base_url+'trooper/action_projeto/imagen_delete',{imagem_id},function(data){
+ 			console.log(data);
+ 		})
+	});
+}
 $(function(){
     var masonryOptions = {itemSelector: '.grid-item'};
     $container = $('.grid').masonry( masonryOptions );
@@ -62,6 +71,6 @@ $(function(){
 			el.fadeIn();
 			locastyle.modal.close()
 		})
-	})
-
+	});
+	deleteImage();
 })

@@ -96,4 +96,8 @@ class Action_projeto extends CI_Controller {
 			}
 		}    
 	}
+	public function imagen_delete(){
+		
+		debug($_POST);    
+	}
 }
