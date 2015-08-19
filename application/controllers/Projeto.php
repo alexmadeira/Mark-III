@@ -20,7 +20,7 @@ class Projeto extends CI_Controller {
 
 	   	$data['titulo'] 	= $projeto->projeto_nome.' - '.$projeto->projeto_slogan;
 		$data['url']	 	= site_url('projeto/'.$projeto->projeto_slug);
-		$data['imagem'] 	= base_url('/public/upload/'.$projeto->projeto_background_principal_img->arquivo_arquivo);
+		$data['imagem'] 	= base_url('/public/upload/'.$projeto->projeto_preview_img->arquivo_arquivo);
 		$data['descricao'] 	= $projeto->projeto_descricao;
 
 		$this->load->view('projeto',$data);
