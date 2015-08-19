@@ -24,7 +24,9 @@
 		<?php }?>
 			<a href="#" class="ls-ico-folder" role="menuitem">Projetos</a>
 			<ul class="ls-submenu" role="menu">
-				<li><a href="<?=site_url('trooper/projetos/projeto/00')?>" class="ls-submenu-item ls-ico-book" role="menuitem">Game 7</a></li>
+				<?php foreach ($sidebar_projeto->result() as $projeto) {?>
+						<li><a href="<?=site_url('trooper/projetos/projeto/'.$projeto->projeto_id)?>" class="ls-submenu-item ls-ico-book" role="menuitem"><?=$projeto->projeto_nome?></a></li>
+				<?php }?>
 				<li><a href="<?=site_url('trooper/projetos/novo')?>" class="ls-submenu-item ls-ico-plus" role="menuitem">Novo Projeto</a></li>
 			</ul>
 		</li>

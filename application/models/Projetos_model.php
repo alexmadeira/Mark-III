@@ -5,6 +5,9 @@
         parent::__construct();
 		$this->load->database();
 		$this->load->model("Imagens_model","MDImagens");
+		$this->load->model("Categorias_model","MDCategorias");
+		$this->load->model("Tipos_model","MDTipos");
+		$this->load->model("Agencias_model","MDAgencias");
 		$this->CI =& get_instance();
 
     }
@@ -15,7 +18,13 @@
 		return $insert;
     }
 
-    public function getPrjeto($where=array(),$like=NULL,$limit=NULL){
+    public function update($id,$projeto){
+		$this->db->where('projeto_id', $id);
+		$update = $this->db->update('trooper_projetos',$projeto); 
+		return $update;
+    }
+
+    public function getPrjeto($where=array(),$like=NULL,$limit=NULL,$order_by=NULL){
 		if($where){$this->db->where($where);}
 		if($like){
 			foreach ($like as $key => $value) {
@@ -32,7 +41,9 @@
 				}
 			}
 		}
-
+		if($order_by){
+			$this->db->order_by($order_by[0],$order_by[1]); 
+		}
 		if($limit){
 			if(count($limit)==1){
 				$this->db->limit($limit[0]);
@@ -68,6 +79,16 @@
 
 			$desktop = $this->MDImagens->get(array('arquivo_id'=>$dados[$key]->projeto_desktop));
 			$dados[$key]->projeto_desktop_img = $desktop->row();
+
+
+			$categoria = $this->MDCategorias->getCategorias(array('categoria_id'=>$dados[$key]->projeto_categoria));
+			$dados[$key]->projeto_categoria_nome = $categoria->row();
+
+			$tipo = $this->MDTipos->getTipos(array('tipo_id'=>$dados[$key]->projeto_tipo));
+			$dados[$key]->projeto_tipo_nome = $tipo->row();
+
+			$agencia = $this->MDAgencias->getAgencias(array('agencia_id'=>$dados[$key]->projeto_agencia));
+			$dados[$key]->projeto_agencia_nome = $agencia->row();
 		}		
 
 		$return->result = $dados;

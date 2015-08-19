@@ -18,11 +18,13 @@ class Action_projeto extends CI_Controller {
 	public function gravaProjeto(){
 
 		$projeto['projeto_nome'] 		= $this->input->post('projeto_nome');
+		$projeto['projeto_slogan'] 		= $this->input->post('projeto_slogan');
 		$projeto['projeto_slug'] 		= slug($this->input->post('projeto_nome'));
 		$projeto['projeto_categoria'] 	= $this->input->post('projeto_categoria');
 		$projeto['projeto_agencia'] 	= $this->input->post('projeto_agencia');
 		$projeto['projeto_tipo'] 		= $this->input->post('projeto_tipo');
 		$projeto['projeto_ano'] 		= $this->input->post('projeto_ano');
+		$projeto['projeto_ordem'] 		= $this->input->post('projeto_ordem');
 		$projeto['projeto_descricao'] 	= $this->input->post('projeto_descricao');
 
 		if($this->input->post('projeto_logo')){$projeto['projeto_logo'] 									= $this->input->post('projeto_logo');}
@@ -40,6 +42,36 @@ class Action_projeto extends CI_Controller {
 			redirect('trooper/projetos/'.$projetoStatus[1], 'refresh');
 		}
 	}
+
+	public function updateProjeto(){
+
+		$projeto_id 					= $this->input->post('projeto_id');
+		$projeto['projeto_nome'] 		= $this->input->post('projeto_nome');
+		$projeto['projeto_slogan'] 		= $this->input->post('projeto_slogan');
+		$projeto['projeto_slug'] 		= slug($this->input->post('projeto_nome'));
+		$projeto['projeto_categoria'] 	= $this->input->post('projeto_categoria');
+		$projeto['projeto_agencia'] 	= $this->input->post('projeto_agencia');
+		$projeto['projeto_tipo'] 		= $this->input->post('projeto_tipo');
+		$projeto['projeto_ano'] 		= $this->input->post('projeto_ano');
+		$projeto['projeto_ordem'] 		= $this->input->post('projeto_ordem');
+		$projeto['projeto_descricao'] 	= $this->input->post('projeto_descricao');
+
+		if($this->input->post('projeto_logo')){$projeto['projeto_logo'] 									= $this->input->post('projeto_logo');}
+		if($this->input->post('projeto_background_principal')){$projeto['projeto_background_principal'] 	= $this->input->post('projeto_background_principal');}
+		if($this->input->post('projeto_preview')){$projeto['projeto_preview'] 								= $this->input->post('projeto_preview');}
+		if($this->input->post('projeto_mobile1')){$projeto['projeto_mobile1'] 								= $this->input->post('projeto_mobile1');}
+		if($this->input->post('projeto_mobile2')){$projeto['projeto_mobile2'] 								= $this->input->post('projeto_mobile2');}
+		if($this->input->post('projeto_produto')){$projeto['projeto_produto'] 								= $this->input->post('projeto_produto');}
+		if($this->input->post('projeto_background')){$projeto['projeto_background'] 						= $this->input->post('projeto_background');}
+		if($this->input->post('projeto_desktop')){$projeto['projeto_desktop'] 								= $this->input->post('projeto_desktop');}
+
+		$projetoStatus = $this->MDProjeto->update($projeto_id,$projeto);
+
+		if($projetoStatus){
+			redirect('trooper/projetos/'.$projeto_id, 'refresh');
+		}
+	}
+
 
 	public function imagen_upload(){
 		
@@ -65,5 +97,10 @@ class Action_projeto extends CI_Controller {
 				}
 			}
 		}    
+	}
+	public function imagen_delete(){
+		$delete_imagem = $this->MDImagem->deletaImagem($this->input->post('imagem_id'));
+
+		echo 1;
 	}
 }

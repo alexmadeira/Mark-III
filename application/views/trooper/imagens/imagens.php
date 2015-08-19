@@ -33,7 +33,7 @@
 	<div class="ls-box">
 		<img src=""  alt="" title="" class="thumbnail" />
 		<p class="titulo"></p>
-		<a href="#" aria-label="Deletar Imagem" class="ls-btn-danger ls-btn-lg ls-btn-block deleteImage" title="Deletar Imagem" data-id="">Deletar</a>
+<!--		<a href="#" aria-label="Deletar Imagem" class="ls-btn-danger ls-btn-lg ls-btn-block deleteImage" title="Deletar Imagem" data-id="" >Deletar</a>-->
 	</div>
 </div>
 </div>

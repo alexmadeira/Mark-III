@@ -6,6 +6,7 @@ class Imagens extends CI_Controller {
 	    parent::__construct();
 	    $this->load->model("Login_model","MDLogin");
         $this->load->model("Imagens_model","MDImagem");
+	    $this->load->model("Projetos_model","MDProjetos");
 
 	    if(!$this->MDLogin->isLogado()){redirect(site_url('trooper/login'), 'refresh');}
 		
@@ -15,6 +16,7 @@ class Imagens extends CI_Controller {
 
 		$data['arquivos'] 	= $this->MDImagem->get();
 		$data['sessao'] 	= 'configuracoes';
+		$data['sidebar_projeto'] = $this->MDProjetos->getPrjeto(NULL,NULL,NULL,array('projeto_ordem','ASC'));
 
 		$this->load->view('trooper/imagens/imagens',$data);
 	}

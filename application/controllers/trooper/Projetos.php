@@ -9,6 +9,7 @@ class Projetos extends CI_Controller {
 		$this->load->model("Agencias_model","MDAgencias");
 		$this->load->model("Categorias_model","MDCategoria");
 		$this->load->model("Tipos_model","MDTipos");
+	    $this->load->model("Projetos_model","MDProjetos");
 
 	    if(!$this->MDLogin->isLogado()){redirect(site_url('trooper/login'), 'refresh');}
 		
@@ -24,16 +25,29 @@ class Projetos extends CI_Controller {
 		$data['categorias'] = $this->MDCategoria->getCategorias();
 		$data['tipos'] 		= $this->MDTipos->getTipos();
 		$data['arquivos'] 	= $this->MDImagem->get();
-		$data['sessao'] = 'projetos';
+		$data['sessao'] 	= 'projetos';
+		$data['titulo']		= 'Novo Projeto';
+		$data['link'] 		= site_url('trooper/action_projeto/gravaProjeto');
+		$data['sidebar_projeto'] = $this->MDProjetos->getPrjeto(NULL,NULL,NULL,array('projeto_ordem','ASC'));
 
-		$this->load->view('trooper/projetos/novo',$data);
+		$this->load->view('trooper/projetos/projeto',$data);
 	}
 	public function projeto($projeto_id){
+		
+		$projeto = $this->MDProjetos->getPrjeto(array('projeto_id'=>$projeto_id))->result();
 	
-		$data['agencias'] 	= $this->MDAgencias->getAgencias();
-		$data['categorias'] = $this->MDCategoria->getCategorias();
-		$data['arquivos'] 	= $this->MDImagem->get();
-		$data['sessao'] = 'projetos';
+		$data['agencias'] 		= $this->MDAgencias->getAgencias();
+		$data['categorias'] 	= $this->MDCategoria->getCategorias();
+		$data['tipos'] 			= $this->MDTipos->getTipos();
+		$data['arquivos'] 		= $this->MDImagem->get();
+		$data['arquivos'] 		= $this->MDImagem->get();
+		$data['projeto'] 		= $projeto[0];
+		$data['titulo']			= $projeto[0]->projeto_nome;
+		$data['link'] 			= site_url('trooper/action_projeto/updateProjeto');
+
+		$data['sidebar_projeto'] = $this->MDProjetos->getPrjeto(NULL,NULL,NULL,array('projeto_ordem','ASC'));
+		
+		$data['sessao'] 	= 'projetos';
 	
 		$this->load->view('trooper/projetos/projeto',$data);
 	}

@@ -7,30 +7,30 @@
     
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="pt-br" />
-    <meta name="copyright" content="Copyright © 1990 - www.alexmadeira.com.br - Todos os Direitos Reservados" />
+    <meta name="copyright" content="Copyright © 1990 - <?=site_url()?> - Todos os Direitos Reservados" />
     <meta name="email" content="alex.c.madeira@gmail.com" />
     <meta name="author" content="Alex Madeira" />
-    <meta name="organization" content="Alex Madeira - Web Solution Developer & SEO analyst" />
+    <meta name="organization" content="Alex Madeira - <?=$titulo?> " />
     <meta name="generator" content="Alex Madeira" />
     <meta name="location" content="São Paulo, Brazil" />
 
     <meta name="keywords" content="Web, Developer, Desenvolvedor, Programador, Analista, SEO, SEM, Criação, Site" />
-    <meta name="description" content="Desnvolvimento de sites e analise de SEO/SEM" />
+    <meta name="description" content="<?=$descricao?>" />
 
 
     <link rel="shortcut icon" href="" type="image/x-icon" />
 
     <!--Facebook Tags-->
     <meta property="og:type" content="article"/>
-    <meta property="og:title" content="Alex Madeira | Web Solution Developer & SEO analyst"/>
-    <meta property="og:url" content="http://www.alexmadeira.com.br"/>
-    <meta property="og:image" content="http://www.alexmadeira.com.br/public/img/alex-madeira-cartao-facebook.jpg"/>
+    <meta property="og:title" content="Alex Madeira | <?=$titulo?>"/>
+    <meta property="og:url" content="<?=$url;?>"/>
+    <meta property="og:image" content="<?=$imagem?>"/>
     <meta property="og:site_name" content="Alex Madeira"/>
-    <meta property="og:description" content="Desnvolvimento de sites e analise de SEO/SEM"/>
+    <meta property="og:description" content="<?=$descricao?>"/>
     <!--End Facebook Tags-->
     
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Alex Madeira | Web Solution Developer & SEO analyst</title>
+    <title>Alex Madeira | <?=$titulo?> </title>
 
     <!-- Bootstrap -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
@@ -49,6 +49,15 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-50122149-1', 'auto');
+      ga('send', 'pageview');
+    </script>
   </head>
     <body>
     <div class="loader">
