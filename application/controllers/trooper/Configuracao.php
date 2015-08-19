@@ -15,14 +15,14 @@ class Configuracao extends CI_Controller {
 	public function acesso(){
 	
 		$data['sessao'] = 'configuracoes';
-		$data['sidebar_projeto'] = $this->MDProjetos->getPrjeto();
+		$data['sidebar_projeto'] = $this->MDProjetos->getPrjeto(NULL,NULL,NULL,array('projeto_ordem','ASC'));
 
 		$this->load->view('trooper/configuracoes/acesso',$data);
 	}
 	public function site($projeto_id){
 
 		$data['sessao'] = 'configuracoes';
-		$data['sidebar_projeto'] = $this->MDProjetos->getPrjeto();
+		$data['sidebar_projeto'] = $this->MDProjetos->getPrjeto(NULL,NULL,NULL,array('projeto_ordem','ASC'));
 
 		$this->load->view('trooper/configuracoes/site',$data);
 	}

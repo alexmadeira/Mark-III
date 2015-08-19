@@ -12,7 +12,7 @@ class Dashboard extends CI_Controller {
 	}
 	
 	public function index(){
-		$data['sidebar_projeto'] = $this->MDProjetos->getPrjeto();
+		$data['sidebar_projeto'] = $this->MDProjetos->getPrjeto(NULL,NULL,NULL,array('projeto_ordem','ASC'));
 		$this->load->view('trooper/dashboard',$data);
 	}
 }

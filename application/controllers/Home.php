@@ -8,7 +8,12 @@ class Home extends CI_Controller {
 
 	public function index(){
 		
-		$data['projetos'] = $this->MDProjetos->getPrjeto();
+		$data['projetos'] = $this->MDProjetos->getPrjeto(NULL,NULL,NULL,array('projeto_ordem','ASC'));
+
+		$data['titulo'] 	= 'Web Solution Developer & SEO analyst';
+		$data['url']	 	= site_url();
+		$data['imagem'] 	= base_url('public/img/01.png');
+		$data['descricao'] 	= 'Desnvolvimento de sites e analise de SEO/SEM';
 
 		$this->load->view('home',$data);
 	}

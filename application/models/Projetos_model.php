@@ -24,7 +24,7 @@
 		return $update;
     }
 
-    public function getPrjeto($where=array(),$like=NULL,$limit=NULL){
+    public function getPrjeto($where=array(),$like=NULL,$limit=NULL,$order_by=NULL){
 		if($where){$this->db->where($where);}
 		if($like){
 			foreach ($like as $key => $value) {
@@ -41,7 +41,9 @@
 				}
 			}
 		}
-
+		if($order_by){
+			$this->db->order_by($order_by[0],$order_by[1]); 
+		}
 		if($limit){
 			if(count($limit)==1){
 				$this->db->limit($limit[0]);

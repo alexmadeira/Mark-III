@@ -19,7 +19,7 @@
 		$slug = str_replace($y, "y", $slug);
 		$slug = str_replace($c, "c", $slug);
 		$slug = str_replace(' ', "-", $slug);
-		return $slug;
+		return strtolower($slug);
 	}
 	function limitar($texto, $numero){
 		$fim = '';

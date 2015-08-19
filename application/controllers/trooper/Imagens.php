@@ -16,7 +16,7 @@ class Imagens extends CI_Controller {
 
 		$data['arquivos'] 	= $this->MDImagem->get();
 		$data['sessao'] 	= 'configuracoes';
-		$data['sidebar_projeto'] = $this->MDProjetos->getPrjeto();
+		$data['sidebar_projeto'] = $this->MDProjetos->getPrjeto(NULL,NULL,NULL,array('projeto_ordem','ASC'));
 
 		$this->load->view('trooper/imagens/imagens',$data);
 	}

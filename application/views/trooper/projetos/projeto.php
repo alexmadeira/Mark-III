@@ -44,9 +44,13 @@
 					    </select>
 					</div>
 				</label>
-				<label class="ls-label col-md-6 col-xs-6">
+				<label class="ls-label col-md-4 col-xs-4">
 				  	<b class="ls-label-text">Ano</b>
 					<input type="text" name="projeto_ano" placeholder="Ano" class="ls-field" value="<?=$projeto->projeto_ano?>" required>
+				</label>
+				<label class="ls-label col-md-2 col-xs-2">
+				  	<b class="ls-label-text">Pocição</b>
+					<input type="number" name="projeto_ordem" placeholder="Pocição" class="ls-field" value="<?=$projeto->projeto_ordem?>" >
 				</label>
 				<label class="ls-label col-md-12 col-xs-12">
 				  	<b class="ls-label-text">Descrição</b>

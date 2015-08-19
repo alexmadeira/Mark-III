@@ -28,7 +28,7 @@ class Projetos extends CI_Controller {
 		$data['sessao'] 	= 'projetos';
 		$data['titulo']		= 'Novo Projeto';
 		$data['link'] 		= site_url('trooper/action_projeto/gravaProjeto');
-		$data['sidebar_projeto'] = $this->MDProjetos->getPrjeto();
+		$data['sidebar_projeto'] = $this->MDProjetos->getPrjeto(NULL,NULL,NULL,array('projeto_ordem','ASC'));
 
 		$this->load->view('trooper/projetos/projeto',$data);
 	}
@@ -45,7 +45,7 @@ class Projetos extends CI_Controller {
 		$data['titulo']			= $projeto[0]->projeto_nome;
 		$data['link'] 			= site_url('trooper/action_projeto/updateProjeto');
 
-		$data['sidebar_projeto'] = $this->MDProjetos->getPrjeto();
+		$data['sidebar_projeto'] = $this->MDProjetos->getPrjeto(NULL,NULL,NULL,array('projeto_ordem','ASC'));
 		
 		$data['sessao'] 	= 'projetos';
 	

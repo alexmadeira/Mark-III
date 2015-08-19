@@ -33,7 +33,11 @@ function deleteImage(){
 	$('.grid').delegate( ".deleteImage", "click", function() {
  		imagem_id = $(this).data('id');
  		$.post(base_url+'trooper/action_projeto/imagen_delete',{imagem_id},function(data){
- 			console.log(data);
+ 			if(data == 1){
+ 				$('a.deleteImage[data-id="'+imagem_id+'"]').closest('.grid-item').fadeOut(500,function(){
+ 					setInterval("reloadMasonry()",1000);
+ 				});
+ 			}
  		})
 	});
 }
