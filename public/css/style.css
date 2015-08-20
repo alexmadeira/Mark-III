@@ -5,7 +5,7 @@ html,body{height: 100%; line-height: 1;font-family: 'Open Sans', Arial, sans-ser
 .main{height: 100%; padding: 0}
 .main .row {margin-left: 0;margin-right: 0;}
 
-.header{text-align: center;background: url('../img/01.png');background-repeat: no-repeat;background-attachment: fixed;background-size: cover;background-position: center center;height: 100%; color:#707070;}
+.header{text-align: center;background: url('../img/alex-madeira-background-home.png');background-repeat: no-repeat;background-attachment: fixed;background-size: cover;background-position: center center;height: 100%; color:#707070;}
 .header strong{color: #fff}
 .header .container{position: fixed;width: 100%;top: 50%;margin-top: -225px;z-index: 0; height: 100%;}
 .header .container .logo{background: url('../img/alex-madeira-logo.png');background-repeat: no-repeat;text-indent: -9999em;display: inline-block;width: 289px;height: 140px;}

@@ -12,7 +12,7 @@ class Home extends CI_Controller {
 
 		$data['titulo'] 	= 'Web Solution Developer & SEO analyst';
 		$data['url']	 	= site_url();
-		$data['imagem'] 	= base_url('public/img/01.png');
+		$data['imagem'] 	= base_url('public/img/alex-madeira-facebook.jpg');
 		$data['descricao'] 	= 'Desnvolvimento de sites e analise de SEO/SEM';
 
 		$this->load->view('home',$data);
