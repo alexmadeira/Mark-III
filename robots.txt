@@ -30,6 +30,7 @@
 
 User-agent: *
 Disallow: /trooper/
+Disallow: /clientes/
 
 
 Sitemap: http://www.alexmadeira.com.br/sitemap.xml

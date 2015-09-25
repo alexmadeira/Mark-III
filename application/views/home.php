@@ -23,7 +23,7 @@
 	    	<div class="row about" id="about">
 				<div class="container">
 					<h2>Veja Alguns dos projetos onde estive envolvido. </h2>
-					<a href="#" class="viewMore">Veja meu curriculo <i class="fa fa-long-arrow-right fa-lg"></i> </a>
+					<a href="<?=base_url('public/upload/alex-madeira.pdf')?>" target="_balnk" class="viewMore">Veja meu curriculo <i class="fa fa-long-arrow-right fa-lg"></i> </a>
 				</div>
 	    	</div>
 	    	<div class="row projects" id="projects">
