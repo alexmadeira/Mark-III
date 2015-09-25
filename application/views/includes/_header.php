@@ -33,13 +33,6 @@
     <title>Alex Madeira | <?=$titulo?> </title>
 
     <!-- Bootstrap -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
-    <link href='<?=base_url('public/fonts/font-awesome-4.3.0/css/font-awesome.min.css')?>' rel='stylesheet' type='text/css'>
-
-    <link href="<?=base_url('public/css/bootstrap.min.css')?>" rel="stylesheet">
-    <link href="<?=base_url('public/fonts/font.css')?>" rel="stylesheet">
-    <link href="<?=base_url('public/css/loader.css')?>" rel="stylesheet">
-
     <?php $style = ($pagina)?$pagina:'style'?>
     <link href="<?=base_url('public/css/'.$style.'.css')?>" rel="stylesheet">
 
