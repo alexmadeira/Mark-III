@@ -33,6 +33,7 @@
     <title>Alex Madeira | <?=$titulo?> </title>
 
     <!-- Bootstrap -->
+    
     <?php $style = ($pagina)?$pagina:'style'?>
     <link href="<?=base_url('public/css/'.$style.'.css')?>" rel="stylesheet">
 
