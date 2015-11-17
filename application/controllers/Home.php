@@ -8,7 +8,7 @@ class Home extends CI_Controller {
 
 	public function index(){
 		
-		$data['projetos'] = $this->MDProjetos->getPrjeto(NULL,NULL,NULL,array('projeto_ordem','ASC'));
+		$data['projetos'] = $this->MDProjetos->getPrjeto(NULL,NULL,NULL,array('projeto_ordem','RANDOM'));
 
 		$data['titulo'] 	= 'Web Solution Developer & SEO analyst';
 		$data['url']	 	= site_url();
