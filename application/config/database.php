@@ -64,10 +64,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'alexmade_admin',
-	'password' => '53eb3a374',
-	'database' => 'database_alexmadeira',
+	'hostname' => 'alex-madeira.mysql.uhserver.com',
+	'username' => 'alex_admin',
+	'password' => 'Jfyq38002*',
+	'database' => 'alex_madeira',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

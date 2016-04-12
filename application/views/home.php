@@ -23,11 +23,11 @@
 	    	<div class="row about" id="about">
 				<div class="container">
 					<h2>Veja Alguns dos projetos onde estive envolvido. </h2>
-					<a href="<?=base_url('public/upload/alex-madeira.pdf')?>" target="_balnk" class="viewMore">Veja meu curriculo <i class="fa fa-long-arrow-right fa-lg"></i> </a>
+					<a href="http://trampos.co/alexmadeira" target="_balnk" class="viewMore">Veja meu curriculo <i class="fa fa-long-arrow-right fa-lg"></i> </a>
 				</div>
 	    	</div>
 	    	<div class="row projects" id="projects">
-	    		<?php $i=1;?>
+	    		<?php $i=($projetos->num_rows()%2==0)?1:0;?>
 				<?php foreach ($projetos->result() as $projeto) {?>
 					<div class="col-md-<?=($i%3==0)?16:8?> project" data-sr='move 0px'>
 		    		  	<a href="<?=site_url('projeto/'.$projeto->projeto_slug)?>" class="transition all"></a>
