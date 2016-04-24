@@ -25,7 +25,6 @@ class Login extends CI_Controller {
 		
 		$usuario = $this->MDLogin->get($data);		
 		
-		print_r($usuario->num_rows());
 		if($usuario->num_rows()>=1){
 			$this->MDLogin->logar($usuario->row());
 			redirect('trooper/', 'refresh');
