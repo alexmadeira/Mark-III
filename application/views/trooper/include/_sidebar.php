@@ -42,6 +42,8 @@
 				<ul class="ls-submenu" role="menu">
 					<li><a href="<?=site_url('trooper/configuracao/acesso')?>" class="ls-submenu-item ls-ico-users" role="menuitem">Dados de acesso</a></li>
 					<li><a href="<?=site_url('trooper/configuracao/site')?>" class="ls-submenu-item ls-ico-domain" role="menuitem">Site</a></li>
+					<li><a href="<?=site_url('trooper/configuracao/sitemap')?>" class="ls-submenu-item ls-ico-code" role="menuitem">SiteMap.xml</a></li>
+					<li><a href="<?=site_url('trooper/configuracao/robosts')?>" class="ls-submenu-item ls-ico-text" role="menuitem">Robots.txt</a></li>
 				</ul>
 		</li>
 	</ul>

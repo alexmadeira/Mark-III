@@ -9,10 +9,11 @@ class Dashboard extends CI_Controller {
 	    $this->load->model("Projetos_model","MDProjetos");
 
 	    if(!$this->MDLogin->isLogado()){redirect(site_url('trooper/login'), 'refresh');}
+
+		$this->data['sidebar_projeto'] = $this->MDProjetos->getPrjeto(NULL,NULL,NULL,array('projeto_ordem','ASC'));
 	}
 	
 	public function index(){
-		$data['sidebar_projeto'] = $this->MDProjetos->getPrjeto(NULL,NULL,NULL,array('projeto_ordem','ASC'));
-		$this->load->view('trooper/dashboard',$data);
+		$this->load->view('trooper/dashboard',$this->data);
 	}
 }
