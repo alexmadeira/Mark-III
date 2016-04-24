@@ -53,7 +53,7 @@
  *
  * NOTE: If you change these, also change the error_reporting() code below
  */
-	define('ENVIRONMENT', 'development');
+	define('ENVIRONMENT', 'production');
 
 /*
  *---------------------------------------------------------------
@@ -71,6 +71,7 @@ switch (ENVIRONMENT)
 	break;
 
 	case 'testing':
+	
 	case 'production':
 		ini_set('display_errors', 0);
 		if (version_compare(PHP_VERSION, '5.3', '>='))

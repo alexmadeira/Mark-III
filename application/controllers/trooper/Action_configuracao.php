@@ -37,33 +37,29 @@ class Action_configuracao extends CI_Controller {
 		$projetos = $this->MDProjetos->getPrjeto();
 
 		//ARQUIVO
-		$arquivo = "./contato.xml";
+		$arquivo = "./sitemap.xml";
 
 		//ABRE O ARQUIVO(SE NÃOEXISTIR, CRIA)
 		$ponteiro = fopen($arquivo, "w");
 
 		//ESCREVE NO ARQUIVO XML
 
-		$header = '<?xml version="1.0" encoding="UTF-8"?> <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"> <url> <loc>http://www.alexmadeira.com.br/</loc> <changefreq>monthly</changefreq> </url>'; 
+		$header = "<?xml version='1.0' encoding='UTF-8'?><urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd'>";
+		$header .= "<url>";
+			$header .= "<loc>http://www.alexmadeira.com.br</loc>";
+			$header .= "<changefreq>monthly</changefreq>";
+		$header .= "</url>";
+
 		fwrite($ponteiro, $header);
 
 		foreach ($projetos->result() as $projeto){
-
-			//MONTA AS TAGS DO XML
 			$conteudo = "<url>";
 				$conteudo .= "<loc>http://www.alexmadeira.com.br/projeto/".$projeto->projeto_slug.".html</loc>";
 				$conteudo .= "<changefreq>monthly</changefreq>";
 			$conteudo .= "</url>";
-
-		 	//ESCREVE NO ARQUIVO
 		 	fwrite($ponteiro, $conteudo);
-		}//FECHA FOR
-
-		//FECHA A TAG AGENDA
+		}
 		fwrite($ponteiro, "</urlset>");
-
-		//FECHA O ARQUIVO
 		fclose($ponteiro);
-
 	}
 }
