@@ -28,7 +28,7 @@ class Configuracao extends CI_Controller {
 	}
 	public function sitemap(){
 
-		$this->load->view('trooper/configuracoes/site',$this->data);
+		$this->load->view('trooper/configuracoes/sitemap',$this->data);
 	}
 }
 
