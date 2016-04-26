@@ -23,6 +23,7 @@ class Projetos extends CI_Controller {
 	}
 
 	public function novo(){
+		$this->session->set_userdata('last_session', 'projetos/novo');
 
 		$this->data['agencias'] 	= $this->MDAgencias->getAgencias();
 		$this->data['categorias'] = $this->MDCategoria->getCategorias();
@@ -34,6 +35,7 @@ class Projetos extends CI_Controller {
 		$this->load->view('trooper/projetos/projeto',$this->data);
 	}
 	public function projeto($projeto_id){
+		$this->session->set_userdata('last_session', 'projetos/projeto/'.$projeto_id);
 		
 		$projeto = $this->MDProjetos->getPrjeto(array('projeto_id'=>$projeto_id))->result();
 	

@@ -14,6 +14,8 @@ class Dashboard extends CI_Controller {
 	}
 	
 	public function index(){
+		$this->session->set_userdata('last_session', 'dashboard');
+
 		$this->load->view('trooper/dashboard',$this->data);
 	}
 }

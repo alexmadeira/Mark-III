@@ -5,9 +5,10 @@
 
 		<form action="" class="ls-form ls-form-vertical row" name="sitemap">
 		  <fieldset>
+	  		<?php $this->load->view('trooper/include/alerta')?>
 		    <label class="ls-label col-md-12 col-xs-12">
 		      <b class="ls-label-text"></b>
-		      <a href="#1" class="ls-btn-primary">Regerar</a>
+		      <a href="<?=site_url('/trooper/action_configuracao/sitemapRegerar')?>" class="ls-btn-primary">Regerar</a>
 		      <a href="#1" class="ls-btn-danger">Apagar</a>
 		    </label>
 		  </fieldset>

@@ -35,14 +35,8 @@ class Action_configuracao extends CI_Controller {
 	public function sitemapRegerar(){
 
 		$projetos = $this->MDProjetos->getPrjeto();
-
-		//ARQUIVO
-		$arquivo = "./sitemap.xml";
-
-		//ABRE O ARQUIVO(SE NÃOEXISTIR, CRIA)
+		$arquivo  = "./sitemap.xml";
 		$ponteiro = fopen($arquivo, "w");
-
-		//ESCREVE NO ARQUIVO XML
 
 		$header = "<?xml version='1.0' encoding='UTF-8'?><urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd'>";
 		$header .= "<url>";
@@ -59,7 +53,15 @@ class Action_configuracao extends CI_Controller {
 			$conteudo .= "</url>";
 		 	fwrite($ponteiro, $conteudo);
 		}
+		
 		fwrite($ponteiro, "</urlset>");
 		fclose($ponteiro);
+
+		$this->session->userdata('sucesses_mesage',"Sitemap.xml regerado com sucesso")
+		if($this->session->userdata('last_session')){
+			redirect(site_url('/trooper/'.$this->session->userdata('last_session')));
+		}else{
+			redirect(site_url('/trooper/'));
+		}
 	}
 }

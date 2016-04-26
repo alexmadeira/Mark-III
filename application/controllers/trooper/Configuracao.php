@@ -19,14 +19,17 @@ class Configuracao extends CI_Controller {
 		redirect(site_url('/trooper'));
 	}
 	public function acesso(){
-	
+		$this->session->set_userdata('last_session', 'configuracao/acesso');
+
 		$this->load->view('trooper/configuracoes/acesso',$this->data);
 	}
 	public function site($projeto_id){
+		$this->session->set_userdata('last_session', 'configuracao/site');
 
 		$this->load->view('trooper/configuracoes/site',$this->data);
 	}
 	public function sitemap(){
+		$this->session->set_userdata('last_session', 'configuracao/sitemap');
 
 		$this->load->view('trooper/configuracoes/sitemap',$this->data);
 	}
