@@ -53,7 +53,16 @@
  *
  * NOTE: If you change these, also change the error_reporting() code below
  */
-	define('ENVIRONMENT', 'production');
+
+	switch ($_SERVER['SERVER_NAME']) {
+		case 'www.alexmadeira.com.br':
+		case 'alexmadeira.com.br':
+			define('ENVIRONMENT', 'production');
+			break;
+		default:
+			define('ENVIRONMENT', 'development');
+			break;
+	}
 
 /*
  *---------------------------------------------------------------

@@ -7,3 +7,12 @@
 <?php if($this->session->userdata('alerta_mesage')){?>
 	<div class="ls-alert-warning"><?=$this->session->userdata('alerta_mesage')?></div>
 <?php }?>
+
+
+<?php 
+
+$this->session->unset_userdata('sucesses_mesage');
+$this->session->unset_userdata('erro_mesage');
+$this->session->unset_userdata('alerta_mesage');
+
+?>

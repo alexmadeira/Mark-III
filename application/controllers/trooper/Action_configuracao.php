@@ -6,6 +6,8 @@ class Action_configuracao extends CI_Controller {
 	    $this->load->model("Login_model","MDLogin");
 	    $this->load->model("Usuario_model","MDUsuario");
 	    $this->load->model("Projetos_model","MDProjetos");
+	    $this->load->model("Configuracoes_model","MDConfiguracoes");
+
 
 	    $this->load->library("Senha");
 
@@ -33,31 +35,32 @@ class Action_configuracao extends CI_Controller {
 	}
 
 	public function sitemapRegerar(){
-
-		$projetos = $this->MDProjetos->getPrjeto();
-		$arquivo  = "./sitemap.xml";
-		$ponteiro = fopen($arquivo, "w");
-
-		$header = "<?xml version='1.0' encoding='UTF-8'?><urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd'>";
-		$header .= "<url>";
-			$header .= "<loc>http://www.alexmadeira.com.br</loc>";
-			$header .= "<changefreq>monthly</changefreq>";
-		$header .= "</url>";
-
-		fwrite($ponteiro, $header);
-
-		foreach ($projetos->result() as $projeto){
-			$conteudo = "<url>";
-				$conteudo .= "<loc>http://www.alexmadeira.com.br/projeto/".$projeto->projeto_slug.".html</loc>";
-				$conteudo .= "<changefreq>monthly</changefreq>";
-			$conteudo .= "</url>";
-		 	fwrite($ponteiro, $conteudo);
-		}
 		
-		fwrite($ponteiro, "</urlset>");
-		fclose($ponteiro);
+		$siteMap = $this->MDConfiguracoes->gerarSiteMap();
 
-		$this->session->userdata('sucesses_mesage',"Sitemap.xml regerado com sucesso")
+		if($siteMap){
+			$this->session->set_userdata('sucesses_mesage',"<strong>Sitemap.xml</strong> regerado com sucesso");
+		}else{
+			$this->session->set_userdata('erro_mesage',"Erro ao gerar <strong>Sitemap.xml</strong>!");
+
+		}
+
+		if($this->session->userdata('last_session')){
+			redirect(site_url('/trooper/'.$this->session->userdata('last_session')));
+		}else{
+			redirect(site_url('/trooper/'));
+		}
+	}
+
+	public function sitemapDelete(){
+		$siteMap = $this->MDConfiguracoes->deletarSiteMap();
+
+		if($siteMap){
+			$this->session->set_userdata('alerta_mesage',"<strong>Sitemap.xml</strong> Deletado com sucesso!");
+		}else{
+			$this->session->set_userdata('erro_mesage',"Erro ao deletar <strong>Sitemap.xml</strong>!");
+		}
+
 		if($this->session->userdata('last_session')){
 			redirect(site_url('/trooper/'.$this->session->userdata('last_session')));
 		}else{
