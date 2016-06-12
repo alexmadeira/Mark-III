@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = 'http://projetos:8888/alex-madeira/';
+$config['base_url'] = 'http://projetos/alex-madeira/';
 
 /*
 |--------------------------------------------------------------------------

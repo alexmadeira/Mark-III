@@ -1,3 +1,4 @@
+
 <?php $this->load->view('includes/_header');?>
 	<div class="container-fluid main">
 		<a id="close" class="transition" href="<?=site_url()?>"title="Encerrar o projeto"><p>Encerrar o projeto</p><i></i></a>
@@ -23,7 +24,7 @@
 					</li>
 				</ul>
 			</div>
-			<a href="#" class="projetoLogo" style="background-image: url('<?=base_url('/public/upload/'.$projeto->projeto_logo_img->arquivo_arquivo)?>')"><?=$projeto->projeto_nome?></a>
+			<a href="<?=$projeto->projeto_url;?>" target="_blank" class="projetoLogo" style="background-image: url('<?=base_url('/public/upload/'.$projeto->projeto_logo_img->arquivo_arquivo)?>')"><?=$projeto->projeto_nome?></a>
 			<div class="project">
 				<h1><?=$projeto->projeto_nome?></h1>
 				<p>- <?=$projeto->projeto_slogan?> -</p>
