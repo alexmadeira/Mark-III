@@ -1,4 +1,3 @@
-
 <?php $this->load->view('includes/_header');?>
 	<div class="container-fluid main">
 		<a id="close" class="transition" href="<?=site_url()?>"title="Encerrar o projeto"><p>Encerrar o projeto</p><i></i></a>
@@ -16,7 +15,7 @@
 					</li>
 					<li>
 						<em>Agencia</em>
-						<p><a href="#" class="<?=$projeto->projeto_agencia_nome->agencia_class?> agencia"><?=$projeto->projeto_agencia_nome->agencia_nome?></a></p>
+						<p><a href="<?=$projeto->projeto_agencia_nome->agencia_url?>" target="_blank" class="<?=$projeto->projeto_agencia_nome->agencia_class?> agencia"><?=$projeto->projeto_agencia_nome->agencia_nome?></a></p>
 					</li>
 					<li>
 						<em>Ano</em>
