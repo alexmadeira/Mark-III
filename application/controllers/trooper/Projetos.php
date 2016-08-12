@@ -13,9 +13,6 @@ class Projetos extends CI_Controller {
 
 	    if(!$this->MDLogin->isLogado()){redirect(site_url('trooper/login'), 'refresh');}
 		
-		$this->data['sidebar_projeto'] = $this->MDProjetos->getPrjeto(NULL,NULL,NULL,array('projeto_ordem','ASC'));
-		$this->data['sessao'] 		 = 'projetos';
-
 	}
 
 	public function index(){
@@ -23,31 +20,35 @@ class Projetos extends CI_Controller {
 	}
 
 	public function novo(){
-		$this->session->set_userdata('last_session', 'projetos/novo');
 
-		$this->data['agencias'] 	= $this->MDAgencias->getAgencias();
-		$this->data['categorias'] = $this->MDCategoria->getCategorias();
-		$this->data['tipos'] 		= $this->MDTipos->getTipos();
-		$this->data['arquivos'] 	= $this->MDImagem->get();
-		$this->data['titulo']		= 'Novo Projeto';
-		$this->data['link'] 		= site_url('trooper/action_projeto/gravaProjeto');
+		$data['agencias'] 	= $this->MDAgencias->getAgencias();
+		$data['categorias'] = $this->MDCategoria->getCategorias();
+		$data['tipos'] 		= $this->MDTipos->getTipos();
+		$data['arquivos'] 	= $this->MDImagem->get();
+		$data['sessao'] 	= 'projetos';
+		$data['titulo']		= 'Novo Projeto';
+		$data['link'] 		= site_url('trooper/action_projeto/gravaProjeto');
+		$data['sidebar_projeto'] = $this->MDProjetos->getPrjeto(NULL,NULL,NULL,array('projeto_ordem','ASC'));
 
-		$this->load->view('trooper/projetos/projeto',$this->data);
+		$this->load->view('trooper/projetos/projeto',$data);
 	}
 	public function projeto($projeto_id){
-		$this->session->set_userdata('last_session', 'projetos/projeto/'.$projeto_id);
 		
 		$projeto = $this->MDProjetos->getPrjeto(array('projeto_id'=>$projeto_id))->result();
 	
-		$this->data['agencias'] 	= $this->MDAgencias->getAgencias();
-		$this->data['categorias'] 	= $this->MDCategoria->getCategorias();
-		$this->data['tipos'] 		= $this->MDTipos->getTipos();
-		$this->data['arquivos'] 	= $this->MDImagem->get();
-		$this->data['arquivos'] 	= $this->MDImagem->get();
-		$this->data['projeto'] 		= $projeto[0];
-		$this->data['titulo']		= $projeto[0]->projeto_nome;
-		$this->data['link'] 		= site_url('trooper/action_projeto/updateProjeto');
+		$data['agencias'] 		= $this->MDAgencias->getAgencias();
+		$data['categorias'] 	= $this->MDCategoria->getCategorias();
+		$data['tipos'] 			= $this->MDTipos->getTipos();
+		$data['arquivos'] 		= $this->MDImagem->get();
+		$data['arquivos'] 		= $this->MDImagem->get();
+		$data['projeto'] 		= $projeto[0];
+		$data['titulo']			= $projeto[0]->projeto_nome;
+		$data['link'] 			= site_url('trooper/action_projeto/updateProjeto');
+
+		$data['sidebar_projeto'] = $this->MDProjetos->getPrjeto(NULL,NULL,NULL,array('projeto_ordem','ASC'));
+		
+		$data['sessao'] 	= 'projetos';
 	
-		$this->load->view('trooper/projetos/projeto',$this->data);
+		$this->load->view('trooper/projetos/projeto',$data);
 	}
 }

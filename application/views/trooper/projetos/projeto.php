@@ -34,12 +34,8 @@
 					    </select>
 					</div>
 				</label>  
-				<label class="ls-label col-md-4 col-xs-4">
-				  	<b class="ls-label-text">URL</b>
-					<input type="url" name="projeto_url" placeholder="http://exemplo.com.br" class="ls-field" value="<?=$projeto->projeto_url?>" required>
-				</label>
-				<label class="ls-label col-md-2 col-xs-2">
-				  	<b class="ls-label-text">Agencia</b>
+				<label class="ls-label col-md-6 col-xs-6">
+				  	<b class="ls-label-text">Agencia</b>-
 					<div class="ls-custom-select">
 					    <select class="ls-select" name="projeto_agencia">
 					    <?php foreach ($agencias->result() as $agencia) {?>
