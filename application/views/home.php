@@ -3,7 +3,7 @@
     	<header class="row header">
 			<section class="container">
 				<h1 class="logo">Alex Madeira</h1>
-				<p>Oi meu nome é <strong>Alex Madeira</strong>, sou um <strong>Web Solution Developer</strong> & <strong>SEO analyst</strong>, que é só um nome bonito para desenvolvedor que <strong>resolve</strong> seus problemas e tem um grande conhecimento em <strong>SEO</strong>.</p>
+				<p>Oi, meu nome é <strong>Alex Madeira</strong>, sou um <strong>Web Solution Developer</strong> & <strong>SEO analyst</strong>, que é só um nome bonito para desenvolvedor que <strong>resolve</strong> seus problemas e tem um grande conhecimento em <strong>SEO</strong>.</p>
 				<nav>
 					<ul class="nav">
 						<li>
