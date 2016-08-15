@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = 'http://teste-deploy.jelasticlw.com.br/';
+$config['base_url'] = 'http://teste-001.jelasticlw.com.br/';
 
 /*
 |--------------------------------------------------------------------------
