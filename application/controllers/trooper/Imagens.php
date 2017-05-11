@@ -9,15 +9,18 @@ class Imagens extends CI_Controller {
 	    $this->load->model("Projetos_model","MDProjetos");
 
 	    if(!$this->MDLogin->isLogado()){redirect(site_url('trooper/login'), 'refresh');}
+
+		$this->data['sessao']		   = 'configuracoes';
+		$this->data['sidebar_projeto'] = $this->MDProjetos->getPrjeto(NULL,NULL,NULL,array('projeto_ordem','ASC'));
+
 		
 	}
 	
 	public function index(){
+		$this->session->set_userdata('last_session', 'imagens');
 
-		$data['arquivos'] 	= $this->MDImagem->get();
-		$data['sessao'] 	= 'configuracoes';
-		$data['sidebar_projeto'] = $this->MDProjetos->getPrjeto(NULL,NULL,NULL,array('projeto_ordem','ASC'));
+		$this->data['arquivos'] = $this->MDImagem->get();
 
-		$this->load->view('trooper/imagens/imagens',$data);
+		$this->load->view('trooper/imagens/imagens',$this->data);
 	}
 }

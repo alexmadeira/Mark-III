@@ -11,8 +11,8 @@ class Projeto extends CI_Controller {
 
 		if(!$projeto){redirect('erro/404','refresh');}
 		
-		$projeto = $this->MDProjetos->getPrjeto(array(),array('projeto_slug' => $projeto))->result[0];
-		$projeto_relacionados = $this->MDProjetos->getPrjeto(array('projeto_id !=' => $projeto->projeto_id),null,array(0,2),array('projeto_id','random'));
+		$projeto = $this->MDProjetos->getPrjeto(NULL,array('projeto_slug' => $projeto))->result[0];
+		$projeto_relacionados = $this->MDProjetos->getPrjeto(array('projeto_id !=' => $projeto->projeto_id, 'projeto_id !='=>'18'),null,array(0,2),array('projeto_id','random'));
 
 	    $data['projeto_relacionados'] = $projeto_relacionados;
 	    $data['projeto'] = $projeto;

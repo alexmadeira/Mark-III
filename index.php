@@ -53,7 +53,16 @@
  *
  * NOTE: If you change these, also change the error_reporting() code below
  */
-	define('ENVIRONMENT', 'production');
+
+	switch ($_SERVER['SERVER_NAME']) {
+		case 'www.alexmadeira.com.br':
+		case 'alexmadeira.com.br':
+			define('ENVIRONMENT', 'production');
+			break;
+		default:
+			define('ENVIRONMENT', 'development');
+			break;
+	}
 
 /*
  *---------------------------------------------------------------
@@ -71,6 +80,7 @@ switch (ENVIRONMENT)
 	break;
 
 	case 'testing':
+	
 	case 'production':
 		ini_set('display_errors', 0);
 		if (version_compare(PHP_VERSION, '5.3', '>='))

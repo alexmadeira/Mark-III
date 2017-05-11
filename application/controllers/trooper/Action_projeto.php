@@ -22,6 +22,7 @@ class Action_projeto extends CI_Controller {
 		$projeto['projeto_slug'] 		= slug($this->input->post('projeto_nome'));
 		$projeto['projeto_categoria'] 	= $this->input->post('projeto_categoria');
 		$projeto['projeto_agencia'] 	= $this->input->post('projeto_agencia');
+		$projeto['projeto_url'] 		= $this->input->post('projeto_url');
 		$projeto['projeto_tipo'] 		= $this->input->post('projeto_tipo');
 		$projeto['projeto_ano'] 		= $this->input->post('projeto_ano');
 		$projeto['projeto_ordem'] 		= $this->input->post('projeto_ordem');
@@ -52,6 +53,7 @@ class Action_projeto extends CI_Controller {
 		$projeto['projeto_categoria'] 	= $this->input->post('projeto_categoria');
 		$projeto['projeto_agencia'] 	= $this->input->post('projeto_agencia');
 		$projeto['projeto_tipo'] 		= $this->input->post('projeto_tipo');
+		$projeto['projeto_url'] 		= $this->input->post('projeto_url');
 		$projeto['projeto_ano'] 		= $this->input->post('projeto_ano');
 		$projeto['projeto_ordem'] 		= $this->input->post('projeto_ordem');
 		$projeto['projeto_descricao'] 	= $this->input->post('projeto_descricao');

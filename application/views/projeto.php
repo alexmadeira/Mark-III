@@ -15,7 +15,7 @@
 					</li>
 					<li>
 						<em>Agencia</em>
-						<p><a href="#" class="<?=$projeto->projeto_agencia_nome->agencia_class?> agencia"><?=$projeto->projeto_agencia_nome->agencia_nome?></a></p>
+						<p><a href="<?=$projeto->projeto_agencia_nome->agencia_url?>" target="_blank" alt="<?=$projeto->projeto_agencia_nome->agencia_nome?>"  title="<?=$projeto->projeto_agencia_nome->agencia_nome?>" class="<?=$projeto->projeto_agencia_nome->agencia_class?> agencia"><?=$projeto->projeto_agencia_nome->agencia_nome?></a></p>
 					</li>
 					<li>
 						<em>Ano</em>
@@ -23,7 +23,7 @@
 					</li>
 				</ul>
 			</div>
-			<a href="#" class="projetoLogo" style="background-image: url('<?=base_url('/public/upload/'.$projeto->projeto_logo_img->arquivo_arquivo)?>')"><?=$projeto->projeto_nome?></a>
+			<a href="<?=$projeto->projeto_url;?>" alt="<?=$projeto->projeto_nome?>" title="<?=$projeto->projeto_nome?>" target="_blank" class="projetoLogo" style="background-image: url('<?=base_url('/public/upload/'.$projeto->projeto_logo_img->arquivo_arquivo)?>')"><?=$projeto->projeto_nome?></a>
 			<div class="project">
 				<h1><?=$projeto->projeto_nome?></h1>
 				<p>- <?=$projeto->projeto_slogan?> -</p>

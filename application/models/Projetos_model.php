@@ -8,6 +8,7 @@
 		$this->load->model("Categorias_model","MDCategorias");
 		$this->load->model("Tipos_model","MDTipos");
 		$this->load->model("Agencias_model","MDAgencias");
+		$this->load->model("Configuracoes_model","MDConfiguracoes");
 		$this->CI =& get_instance();
 
     }
@@ -15,12 +16,14 @@
     public function insert($projeto){
     	$insert[0] = $this->db->insert('trooper_projetos',$projeto); 
     	$insert[1] = $this->db->insert_id();
+    	$this->MDConfiguracoes->gerarSiteMap();
 		return $insert;
     }
 
     public function update($id,$projeto){
 		$this->db->where('projeto_id', $id);
 		$update = $this->db->update('trooper_projetos',$projeto); 
+		$this->MDConfiguracoes->gerarSiteMap();
 		return $update;
     }
 
