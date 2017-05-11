@@ -64,8 +64,8 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'alex-madeira.mysql.uhserver.com',
-	'username' => 'alex_admin',
+	'hostname' => 'localhost',
+	'username' => 'alexmadeira',
 	'password' => 'Jfyq38002*',
 	'database' => 'alex_madeira',
 	'dbdriver' => 'mysqli',
